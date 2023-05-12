@@ -2,13 +2,18 @@ import express from 'express';
 import cors from 'cors';
 import session from 'express-session';
 import dotenv from 'dotenv'
+// import db from './config/Database.js'
 import UserRoute from "./route/UserRoute.js";
 import FarmingRoute from "./route/FarmingRoute.js";
-
 
 dotenv.config();
 
 const app = express();
+
+// (async () => {
+//     await db.sync();
+// })();
+
 
 app.use(session({
     secret: process.env.SESSION_SECRET,
