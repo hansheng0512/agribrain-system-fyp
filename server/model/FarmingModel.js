@@ -27,17 +27,16 @@ const Farming = db.define('FARMING_T',{
         type: DataTypes.DATE,
         allowNull:false,
         validate: {
-            notEmpty:true, //not null and not empty string
+            notEmpty:true,
             isDate:true
         }
     },
 
-    user_id:{
+    userId:{
         type: DataTypes.INTEGER,
         allowNull:false,
         validate: {
             notEmpty:true,
-            len:[3,100]
         }
     }
 
@@ -47,11 +46,6 @@ const Farming = db.define('FARMING_T',{
 });
 
 User.hasMany(Farming);
-Farming.belongsTo(User,{foreignKey:'user_id'});
+Farming.belongsTo(User,{foreignKey:'userId'});
 
 export default Farming;
-
-
-
-
-
