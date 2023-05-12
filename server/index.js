@@ -2,6 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import session from 'express-session';
 import dotenv from 'dotenv'
+import UserRoute from "./route/UserRoute.js";
+import FarmingRoute from "./route/FarmingRoute.js";
+
 
 dotenv.config();
 
@@ -22,6 +25,8 @@ app.use(cors({
 }));
 
 app.use(express.json());
+app.use(UserRoute);
+app.use(FarmingRoute);
 
 app.listen(process.env.APP_PORT,() => {
     console.log("Server up and running...");
