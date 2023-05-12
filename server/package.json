@@ -2,8 +2,10 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Smart Farming and Agriculture System using IoT and Data Analytics",
+  "type": "module",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,6 +16,7 @@
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "mysql2": "^3.3.1",
+    "nodemon": "^2.0.22",
     "sequelize": "^6.31.1"
   }
 }
