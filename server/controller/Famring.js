@@ -1,8 +1,11 @@
 import Farming from "../model/FarmingModel.js";
+import User from "../model/UserModel.js"
+import {request} from "express";
 
-export const getFarming = (req,res) =>{
+export const getFarming = async (req, res) => {
 
 }
+
 
 
 export const getFarmingById = (req,res) =>{

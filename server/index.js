@@ -8,6 +8,7 @@ import UserRoute from "./route/UserRoute.js";
 import FarmingRoute from "./route/FarmingRoute.js";
 import CropRoute from "./route/CropRoute.js";
 import AuthRoute from "./route/AuthRoute.js";
+import CropManagementRoute from "./route/CropManagementRoute.js";
 
 dotenv.config();
 
@@ -43,6 +44,7 @@ app.use(express.json());
 app.use(UserRoute);
 app.use(FarmingRoute);
 app.use(CropRoute);
+app.use(CropManagementRoute);
 app.use(AuthRoute);
 
 // store.sync();

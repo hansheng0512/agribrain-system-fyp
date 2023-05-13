@@ -6,6 +6,7 @@ import {
     updateFarming,
     deleteFarming
 } from "../controller/Famring.js"
+import {verifyUser} from "../middleware/AuthUser.js";
 
 const router = express.Router();
 

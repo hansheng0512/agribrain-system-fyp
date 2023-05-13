@@ -1,5 +1,7 @@
 import {Sequelize} from "sequelize";
 import db from '../config/Database.js'
+import Farming from "./FarmingModel.js";
+import User from "./UserModel.js";
 
 const {DataTypes} = Sequelize;
 
@@ -23,9 +25,20 @@ const Crop = db.define('CROP_T',{
         }
     },
 
+    userId:{
+        type: DataTypes.INTEGER,
+        allowNull:false,
+        validate: {
+            notEmpty:true,
+        }
+    },
+
 },{
     freezeTableName:true,
 });
+
+User.hasMany(Crop);
+Crop.belongsTo(User,{foreignKey:'userId'});
 
 export default Crop;
 

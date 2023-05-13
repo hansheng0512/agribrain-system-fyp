@@ -1,12 +1,12 @@
 import {Sequelize} from "sequelize";
 import db from '../config/Database.js'
-import User from '../model/UserModel.js'
-import Crop from "../model/CropModel.js";
+import Crop from "./CropModel.js";
+
 const {DataTypes} = Sequelize;
 
-const Farming = db.define('FARMING_T',{
+const CropManagement = db.define('CROP_MANAGEMENT_T',{
 
-    farming_uuid:{
+    management_uuid:{
         type: DataTypes.STRING,
         defaultValue:DataTypes.UUIDV4,
         allowNull:false,
@@ -15,7 +15,7 @@ const Farming = db.define('FARMING_T',{
         }
     },
 
-    farming_name:{
+    management_crop:{
         type: DataTypes.STRING,
         allowNull:false,
         validate: {
@@ -24,12 +24,27 @@ const Farming = db.define('FARMING_T',{
         }
     },
 
-    farming_date:{
-        type: DataTypes.DATE,
+    management_in:{
+        type: DataTypes.INTEGER,
         allowNull:false,
         validate: {
             notEmpty:true,
-            isDate:true
+        }
+    },
+
+    management_out:{
+        type: DataTypes.INTEGER,
+        allowNull:false,
+        validate: {
+            notEmpty:true,
+        }
+    },
+
+    management_inventory:{
+        type: DataTypes.INTEGER,
+        allowNull:false,
+        validate: {
+            notEmpty:true,
         }
     },
 
@@ -39,14 +54,18 @@ const Farming = db.define('FARMING_T',{
         validate: {
             notEmpty:true,
         }
-    }
+    },
 
 },{
     freezeTableName:true,
 });
 
-Crop.hasMany(Farming);
-Farming.belongsTo(Crop,{foreignKey:'cropId'});
+Crop.hasMany(CropManagement);
+CropManagement.belongsTo(Crop,{foreignKey:'cropId'});
+
+export default CropManagement;
 
 
-export default Farming;
+
+
+

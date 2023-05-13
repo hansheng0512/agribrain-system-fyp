@@ -1,6 +1,6 @@
 import Crop from "../model/CropModel.js";
 
-export const getCrop = (req,res) =>{
+export const getCrop =  (req,res) =>{
 
 }
 
