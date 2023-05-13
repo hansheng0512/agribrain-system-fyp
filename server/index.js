@@ -6,6 +6,7 @@ import dotenv from 'dotenv'
 import UserRoute from "./route/UserRoute.js";
 import FarmingRoute from "./route/FarmingRoute.js";
 import CropRoute from "./route/CropRoute.js";
+import AuthRoute from "./route/AuthRoute.js";
 
 dotenv.config();
 
@@ -34,6 +35,7 @@ app.use(express.json());
 app.use(UserRoute);
 app.use(FarmingRoute);
 app.use(CropRoute);
+app.use(AuthRoute);
 
 app.listen(process.env.APP_PORT,() => {
     console.log("Server up and running...");

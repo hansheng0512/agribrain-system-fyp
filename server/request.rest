@@ -84,3 +84,36 @@ Content-Type: application/json
 ###
 //delete user
 DELETE http://localhost:5000/user/bec0e7f5-4a81-4e97-aca0-e6f271efc7b5
+
+###
+//Login user (Admin)
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "user_email": "chingc217@gmail.com",
+  "user_password": "ching"
+}
+
+###
+//Login user (Admin)
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+  "user_email": "lekyew@gmail.com",
+  "user_password": "yew"
+}
+
+###
+GET http://localhost:5000/me
+Content-Type: application/json
+
+{
+"user_email": "lekyew@gmail.com",
+"user_password": "yew"
+}
+
+###
+//Logout
+DELETE http://localhost:5000/logout

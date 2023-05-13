@@ -1,12 +1,10 @@
 import User from "../model/UserModel.js";
 import argon2 from "argon2";
-import req from "express/lib/request.js";
-import res from "express/lib/response.js";
 
 export const Login = async (req, res) => {
     const user = await User.findOne({
         where: {
-            user_email: req.params.user_email
+            user_email: req.body.user_email
         }
     });
     if(!user) return res.status(404).json({msg: 'User not found'});
