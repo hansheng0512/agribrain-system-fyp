@@ -39,7 +39,7 @@ export const getCropById = async (req,res) =>{
                 crop_uuid:req.params.id,
             }
         });
-        if(!crop) return res.status(404).json({msg:"Crop not found"})
+        if(!crop) return res.status(404).json({msg:"CropList not found"})
         let response;
         if(req.user_role === "Farmer"){
             response = await Crop.findOne(({
@@ -79,7 +79,7 @@ export const createCrop = async (req,res) =>{
             crop_name:crop_name,
             userId: req.userId
         });
-        res.status(201).json({msg:"Crop Created Successfully"})
+        res.status(201).json({msg:"CropList Created Successfully"})
     }catch (error){
         res.status(500).json({msg:error.message});
     }
@@ -93,7 +93,7 @@ export const updateCrop = async (req,res) =>{
                 crop_uuid:req.params.id,
             }
         });
-        if(!crop) return res.status(404).json({msg:"Crop not found"})
+        if(!crop) return res.status(404).json({msg:"CropList not found"})
         const {crop_name} = req.body;
         if(req.user_role === "Farmer"){
             await Crop.update({crop_name},{
@@ -109,7 +109,7 @@ export const updateCrop = async (req,res) =>{
                 },
             });
         }
-        res.status(200).json({msg:"Crop Updated Successfully"});
+        res.status(200).json({msg:"CropList Updated Successfully"});
     }catch (error){
         res.status(500).json({msg:error.message});
     }
@@ -123,7 +123,7 @@ export const deleteCrop = async (req,res) =>{
                 crop_uuid:req.params.id,
             }
         });
-        if(!crop) return res.status(404).json({msg:"Crop not found"})
+        if(!crop) return res.status(404).json({msg:"CropList not found"})
         const {crop_name} = req.body;
         if(req.user_role === "Farmer"){
             await Crop.destroy({
@@ -139,7 +139,7 @@ export const deleteCrop = async (req,res) =>{
                 },
             });
         }
-        res.status(200).json({msg:"Crop Deleted Successfully"});
+        res.status(200).json({msg:"CropList Deleted Successfully"});
     }catch (error){
         res.status(500).json({msg:error.message});
     }
