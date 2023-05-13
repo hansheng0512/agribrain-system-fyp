@@ -6,13 +6,14 @@ import {
     updateCrop,
     deleteCrop
 } from "../controller/Crop.js"
+import {verifyUser} from "../middleware/AuthUser.js";
 
 const router = express.Router();
 
-router.get('/crop',getCrop);
-router.get('/crop/:id',getCropById);
-router.post('/crop',createCrop);
-router.patch('/crop/:id',updateCrop);
-router.delete('/crop/:id',deleteCrop);
+router.get('/crop',verifyUser,getCrop);
+router.get('/crop/:id',verifyUser,getCropById);
+router.post('/crop',verifyUser,createCrop);
+router.patch('/crop/:id',verifyUser,updateCrop);
+router.delete('/crop/:id',verifyUser,deleteCrop);
 
 export default router;
