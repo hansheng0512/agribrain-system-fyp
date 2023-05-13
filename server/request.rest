@@ -1,0 +1,86 @@
+###
+//Create a new user (Admin)
+POST http://localhost:5000/user
+Content-Type: application/json
+
+{
+  "user_fullname": "Chye Zee Ching",
+  "user_email": "chingc217@gmail.com",
+  "user_password": "ching",
+  "user_confirmPassword": "ching",
+  "user_role": "Admin",
+  "user_phone": "0105650214"
+}
+
+###
+//Create a new user (Farmer)
+POST http://localhost:5000/user
+Content-Type: application/json
+
+{
+  "user_fullname": "Yek Lek Yew",
+  "user_email": "lekyew@gmail.com",
+  "user_password": "yew",
+  "user_confirmPassword": "yew",
+  "user_role": "Farmer",
+  "user_phone": "0146618038"
+}
+
+
+###
+//Create a new user (Farmer)
+POST http://localhost:5000/user
+Content-Type: application/json
+
+{
+  "user_fullname": "Leo",
+  "user_email": "leo@gmail.com",
+  "user_password": "leo",
+  "user_confirmPassword": "leo",
+  "user_role": "Farmer",
+  "user_phone": "0186618038"
+}
+
+###
+//Get All User
+GET http://localhost:5000/user
+
+###
+//Get User By Id
+GET http://localhost:5000/user/9db8f238-9c7a-4ff5-bebb-84fe5ebba2da
+
+###
+//Get User By Id
+GET http://localhost:5000/user/cc38cb7a-1255-4f48-b0e0-498324ff777d
+
+###
+//Update user (Admin)
+PATCH http://localhost:5000/user/9db8f238-9c7a-4ff5-bebb-84fe5ebba2da
+Content-Type: application/json
+
+{
+  "user_fullname": "Chye Zee Ching",
+  "user_email": "chingc217@gmail.com",
+  "user_password": "",
+  "user_confirmPassword": "",
+  "user_role": "Farmer",
+  "user_phone": "0105650214"
+}
+
+###
+//Update user (Admin)
+PATCH http://localhost:5000/user/cc38cb7a-1255-4f48-b0e0-498324ff777d
+Content-Type: application/json
+
+{
+  "user_fullname": "Yek Lek Yew",
+  "user_email": "lekyew@gmail.com",
+  "user_password": "yew",
+  "user_confirmPassword": "yew",
+  "user_role": "Worker",
+  "user_phone": "0146618038"
+}
+
+###
+//delete user
+DELETE http://localhost:5000/user/bec0e7f5-4a81-4e97-aca0-e6f271efc7b5
