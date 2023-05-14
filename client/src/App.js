@@ -1,6 +1,6 @@
 import {BrowserRouter, Routes,Route} from "react-router-dom";
-import Dashboard from "./pages/Dashboard/dashboard";
-import Login from "./component/Login";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Login from "./component/authentication/Login";
 import User from "./pages/User/User";
 import Crop from "./pages/Crop/Crop"
 import AddUser from "./pages/User/AddUser";

@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
-import Layout from '../Layout/layout'
-import CropList from '../../component/CropList'
+import Layout from '../Layout/Layout'
+import CropList from '../../component/crop/CropList'
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {getMe} from "../../features/authSlice";
