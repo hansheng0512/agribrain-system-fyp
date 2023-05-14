@@ -110,7 +110,7 @@ const Sidebar = () => {
                     Settings
                 </p>
                 <ul className="menu-list">
-                    <button onClick={logout} className="button is-white"><IoLogOut/> Logout</button>
+                    <li onClick={logout}><IoLogOut/> Logout</li>
                 </ul>
             </aside>
         </div>
