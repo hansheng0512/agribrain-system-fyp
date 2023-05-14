@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const ProductList = () => {
-    const [crop, setProducts] = useState([]);
+    const [crop, setCrop] = useState([]);
 
     useEffect(() => {
         getCrops();
@@ -11,12 +11,12 @@ const ProductList = () => {
 
     const getCrops = async () => {
         const response = await axios.get("http://localhost:5000/crop");
-        setProducts(response.data);
+        setCrop(response.data);
         console.log(response.data);
     };
 
-    const deleteProduct = async (productId) => {
-        await axios.delete(`http://localhost:5000/crop/${productId}`);
+    const deleteProduct = async (cropId) => {
+        await axios.delete(`http://localhost:5000/crop/${cropId}`);
         getCrops();
     };
 
