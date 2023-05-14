@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react';
-import Layout from '../Layout/layout';
-import Welcome from '../../component/Welcome';
+import Layout from '../Layout/Layout';
+import Welcome from '../../component/layout/Welcome';
 import {useDispatch,useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import { getMe} from "../../features/authSlice"

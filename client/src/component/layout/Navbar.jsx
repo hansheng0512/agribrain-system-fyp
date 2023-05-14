@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink, useNavigate} from 'react-router-dom'
 import {useDispatch, useSelector} from "react-redux";
-import {LogoutUser, reset} from "../features/authSlice";
+import {LogoutUser, reset} from "../../features/authSlice";
 
 const Navbar = () => {
   const dispatch = useDispatch();
