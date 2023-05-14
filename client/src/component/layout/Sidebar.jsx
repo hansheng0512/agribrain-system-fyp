@@ -9,8 +9,6 @@ import {TiWeatherPartlySunny}   from 'react-icons/ti'
 import {GiFarmTractor} from 'react-icons/gi'
 import {FaChartPie} from 'react-icons/fa'
 
-import "./Navbar.css"
-
 const Sidebar = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -110,7 +108,11 @@ const Sidebar = () => {
                     Settings
                 </p>
                 <ul className="menu-list">
-                    <li onClick={logout}><IoLogOut/> Logout</li>
+                    <li onClick={logout}>
+                        <a> <IoLogOut/>
+                            Logout
+                        </a>
+                    </li>
                 </ul>
             </aside>
         </div>

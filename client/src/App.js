@@ -7,12 +7,14 @@ import AddUser from "./pages/User/AddUser";
 import EditUser from "./pages/User/EditUser";
 import AddCrop from "./pages/Crop/AddCrop";
 import EditCrop from "./pages/Crop/EditCrop";
+import Agribrain from "./pages/Agribrain/Agribrain";
 function App() {
   return (
     <div>
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Login/>} />
+                <Route path="/agribrain" element={<Agribrain/>} />
                 <Route path="/dashboard" element={<Dashboard/>} />
                 <Route path="/user" element={<User/>} />
                 <Route path="/user/add" element={<AddUser/>} />

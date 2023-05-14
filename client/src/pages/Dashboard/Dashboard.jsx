@@ -4,7 +4,6 @@ import Welcome from '../../component/layout/Welcome';
 import {useDispatch,useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import { getMe} from "../../features/authSlice"
-import {get} from "axios";
 
 const Dashboard = () => {
     const dispatch = useDispatch();

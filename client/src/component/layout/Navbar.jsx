@@ -17,7 +17,7 @@ const Navbar = () => {
       <div>
         <nav className="navbar is-fixed-top " style={{ backgroundColor: "#71AF9D" }}>
           <div className="navbar-brand">
-            <NavLink to="/dashboard" className="navbar-item">
+            <NavLink to="/agribrain" className="navbar-item">
               <h1 style={{ color: "#383838", fontSize: "30px", fontWeight: "900" }}>AgriBrain</h1>
             </NavLink>
 
