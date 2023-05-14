@@ -116,11 +116,11 @@ DELETE http://localhost:5000/logout
 
 
 ###
-//Get All Crop
+//Get All CropList
 GET http://localhost:5000/crop
 
 ###
-//Create Crop
+//Create CropList
 POST http://localhost:5000/crop
 Content-Type: application/json
 
@@ -129,12 +129,12 @@ Content-Type: application/json
 }
 
 ###
-//Get Crop by id
+//Get CropList by id
 GET http://localhost:5000/crop/4af7cb88-c911-47d1-a800-7422e79cf5cc
 
 
 ###
-//Update Crop
+//Update CropList
 PATCH http://localhost:5000/crop/4af7cb88-c911-47d1-a800-7422e79cf5cc
 Content-Type: application/json
 
@@ -144,6 +144,6 @@ Content-Type: application/json
 
 
 ###
-//Delete Crop
+//Delete CropList
 DELETE http://localhost:5000/crop/042145b4-a148-442e-a823-1fefb610ad32
 
