@@ -1,9 +1,9 @@
 import React from 'react'
 
 const CropList = () => {
-  return (
-    <div>
-        <h1 className="title">Crops</h1>
+    return (
+        <div>
+            <h1 className="title">Crops</h1>
             <h2 className="subtitle">List of Crops</h2>
             <table className='table is-striped is-fullwidth'>
                 <thread>
@@ -15,17 +15,17 @@ const CropList = () => {
                     </tr>
                 </thread>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
                 </tbody>
             </table>
-    </div>
-  )
+        </div>
+    )
 }
 
 export default CropList
