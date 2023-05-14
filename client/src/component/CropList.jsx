@@ -1,31 +1,67 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
-const CropList = () => {
+const ProductList = () => {
+    const [crop, setProducts] = useState([]);
+
+    useEffect(() => {
+        getCrops();
+    }, []);
+
+    const getCrops = async () => {
+        const response = await axios.get("http://localhost:5000/crop");
+        setProducts(response.data);
+        console.log(response.data);
+    };
+
+    const deleteProduct = async (productId) => {
+        await axios.delete(`http://localhost:5000/crop/${productId}`);
+        getCrops();
+    };
+
     return (
         <div>
             <h1 className="title">Crops</h1>
             <h2 className="subtitle">List of Crops</h2>
-            <table className='table is-striped is-fullwidth'>
-                <thread>
-                    <tr>
-                        <th>No</th>
-                        <th>Crop Name</th>
-                        <th>Created By</th>
-                        <th>Action</th>
-                    </tr>
-                </thread>
-                <tbody>
+            <Link to="/crop/add" className="button is-primary mb-2">
+                Add New
+            </Link>
+            <table className="table is-striped is-fullwidth">
+                <thead>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <th>No</th>
+                    <th>Crop Name</th>
+                    <th>Created By</th>
+                    <th>Actions</th>
                 </tr>
+                </thead>
+                <tbody>
+                {crop.map((crop, index) => (
+                    <tr key={crop.crop_uuid}>
+                        <td>{index + 1}</td>
+                        <td>{crop.crop_name}</td>
+                        <td>{crop.USER_T.user_fullname}</td>
+                        <td>
+                            <Link
+                                to={`/crop/edit/${crop.crop_uuid}`}
+                                className="button is-small is-info"
+                            >
+                                Edit
+                            </Link>
+                            <button
+                                onClick={() => deleteProduct(crop.crop_uuid)}
+                                className="button is-small is-danger"
+                            >
+                                Delete
+                            </button>
+                        </td>
+                    </tr>
+                ))}
                 </tbody>
             </table>
         </div>
-    )
-}
+    );
+};
 
-export default CropList
+export default ProductList;
