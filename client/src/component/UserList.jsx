@@ -47,13 +47,13 @@ const UserList = () => {
                         <td>{user.user_phone}</td>
                         <td>
                             <Link
-                                to={`/user/edit/${user.uuid}`}
+                                to={`/user/edit/${user.user_uuid}`}
                                 className="button is-small is-info"
                             >
                                 Edit
                             </Link>
                             <button
-                                onClick={() => deleteUser(user.uuid)}
+                                onClick={() => deleteUser(user.user_uuid)}
                                 className="button is-small is-danger"
                             >
                                 Delete
