@@ -8,14 +8,19 @@ import EditUser from "./pages/User/EditUser";
 import AddCrop from "./pages/Crop/AddCrop";
 import EditCrop from "./pages/Crop/EditCrop";
 import Agribrain from "./pages/Agribrain/Agribrain";
+import SensorMonitoring from "./pages/SensorMonitoring/SensorMonitoring";
 function App() {
   return (
     <div>
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Login/>} />
+                {/*Main Page*/}
                 <Route path="/agribrain" element={<Agribrain/>} />
                 <Route path="/dashboard" element={<Dashboard/>} />
+                <Route path="/sensor-monitoring" element={<SensorMonitoring/>} />
+
+                {/*Subpage*/}
                 <Route path="/user" element={<User/>} />
                 <Route path="/user/add" element={<AddUser/>} />
                 <Route path="/user/edit/:id" element={<EditUser/>} />

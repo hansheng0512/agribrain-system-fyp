@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { NavLink} from 'react-router-dom';
+import React, {useState} from 'react';
+import {NavLink} from 'react-router-dom';
+
 const Navbar = () => {
   const [isBurgerOpen, setIsBurgerOpen] = useState(false);
 
@@ -9,33 +10,36 @@ const Navbar = () => {
 
 
   const menuItemStyle = {
-    color: "383838",
+    color: "white",
     hover:"none",
   };
 
   return (
       <div>
-        <nav className="navbar is-fixed-top " style={{ backgroundColor: "#71AF9D" }}>
+        <nav className="navbar is-fixed-top " style={{backgroundColor: "#71AF9D"}}>
           <div className="navbar-brand">
             <NavLink to="/agribrain" className="navbar-item">
-              <h1 style={{ color: "#383838", fontSize: "30px", fontWeight: "900" }}>AgriBrain</h1>
+              <h1 style={{color: "white", fontSize: "35px", fontWeight: "900", marginLeft:"1vw"}}>AgriBrain</h1>
             </NavLink>
-
-            <a role="button" className={`navbar-burger burger ${isBurgerOpen ? 'is-active' : ''}`} aria-label="menu" aria-expanded="false"
-               data-target="navbarBasicExample" onClick={toggleBurger} >
+            <a role="button" className={`navbar-burger burger ${isBurgerOpen ? 'is-active' : ''}`} aria-label="menu"
+               aria-expanded="false"
+               data-target="navbarBasicExample"
+               onClick={toggleBurger}
+               style={{color:"white", marginTop:"2vh"}}
+            >
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
               <span aria-hidden="true"></span>
             </a>
           </div>
 
-          <div id="navbarBasicExample" className={`navbar-menu ${isBurgerOpen ? 'is-active' : ''}`}>
-            <div className="navbar-end" style={{fontWeight: 'bold', marginRight:"2vw"}}>
+          <div id="navbarBasicExample" className={`navbar-menu ${isBurgerOpen ? 'is-active' : ''}`} style={{backgroundColor:"#71AF9D"}}>
+            <div className="navbar-end" style={{fontWeight: 'bold', marginRight: "2vw"}}>
               <NavLink to="/dashboard" className="navbar-item" onClick={toggleBurger} style={menuItemStyle}>
                 Dashboard
               </NavLink>
-              <NavLink to="/soil-sensor" className="navbar-item" onClick={toggleBurger} style={menuItemStyle}>
-                Soil Sensor
+              <NavLink to="/sensor-monitoring" className="navbar-item" onClick={toggleBurger} style={menuItemStyle}>
+                Sensor Monitoring
               </NavLink>
               <NavLink to="/climate-condition" className="navbar-item" onClick={toggleBurger} style={menuItemStyle}>
                 Climate Condition

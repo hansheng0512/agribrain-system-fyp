@@ -16,8 +16,8 @@ const Layout = ({children}) => {
                 </div>
                 <div className="column has-background-light">
                     <p style={{marginTop:"1vh",textAlign: "right",padding:"1vh",marginRight:"4vw"}}>
-                        <IoPerson style={{marginRight: "1vw"}}/>
                         {user && user.user.user_fullname}
+                        <IoPerson style={{marginLeft: "1vw"}}/>
                     </p>
                     <main>
                         <div style={{marginTop:"1vh",marginRight:"2vw",marginLeft:"2vw",marginBottom:"3vh",minHeight:"85vh",backgroundColor:"white",padding:"3vh"}}>
