@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {getMe} from "../../../features/authSlice";
 import Layout from "../../Layout/Layout";
-import CropManagement from "../../../component/precision/cropManagement/CropManagement";
+import CropManagementList from "../../../component/precision/cropManagement/CropManagementList";
 
 const ManagementCropDashboard = () => {
     const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const ManagementCropDashboard = () => {
 
     return (
         <Layout>
-            <CropManagement/>
+            <CropManagementList/>
         </Layout>
     );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CropManagement = () => {
+const CropManagementList = () => {
     return (
         <div>
             <h1 className="title">CropManagement</h1>
@@ -8,4 +8,4 @@ const CropManagement = () => {
     );
 };
 
-export default CropManagement;
+export default CropManagementList;

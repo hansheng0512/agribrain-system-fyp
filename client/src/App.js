@@ -14,9 +14,8 @@ import SurroundingDashboard from "./pages/SensorMonitoring/SurroundingDashboard"
 import ClimateDashboard from "./pages/ClimateCondition/ClimateDashboard";
 import HistoricalDashboard from "./pages/ClimateCondition/HistoricalDashboard";
 import ForecastDashboard from "./pages/ClimateCondition/ForecastDashboard";
-import PrecisionFarming from "./component/precision/PrecisonFarming";
 import PrecisionDashboard from "./pages/PrecisionFarming/PrecisionDashboard";
-import ManagementCropDashboard from "./pages/PrecisionFarming/CropManagement/ManagementDashboard";
+import ManagementCropDashboard from "./pages/PrecisionFarming/CropManagement/CropManagement";
 import FarmingRecordDashboard from "./pages/PrecisionFarming/FarmingRecord/FarmRecordDashboard";
 function App() {
   return (
