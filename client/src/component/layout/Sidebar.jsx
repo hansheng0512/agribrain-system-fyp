@@ -72,8 +72,8 @@ const Sidebar = () => {
                         {isPrecisionSubMenuOpen &&
                             <ul>
                                 <li className="ml-1"><NavLink to={"/crop"}>Crops</NavLink></li>
-                                <li className="ml-1"><a>Crops Management</a></li>
-                                <li className="ml-1"><a>Farming Record</a></li>
+                                <li className="ml-1"><NavLink to="/precision-farming/crop-management">Crops Management</NavLink></li>
+                                <li className="ml-1"><NavLink to="/precision-farming/farming-record">Farming Records</NavLink></li>
                             </ul>
                         }
                     </li>
