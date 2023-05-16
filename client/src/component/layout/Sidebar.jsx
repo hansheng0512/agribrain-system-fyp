@@ -71,7 +71,7 @@ const Sidebar = () => {
                         <a onClick={togglePrecisionSubMenu}><GiFarmTractor/> Precision Farming</a>
                         {isPrecisionSubMenuOpen &&
                             <ul>
-                                <li className="ml-1"><NavLink to={"/crop"}>Crops</NavLink></li>
+                                <li className="ml-1"><NavLink to="/precision-farming/crop">Crops</NavLink></li>
                                 <li className="ml-1"><NavLink to="/precision-farming/crop-management">Crops Management</NavLink></li>
                                 <li className="ml-1"><NavLink to="/precision-farming/farming-record">Farming Records</NavLink></li>
                             </ul>

@@ -36,11 +36,15 @@ function App() {
                 <Route path="/sensor-monitoring/surrounding" element={<SurroundingDashboard/>} />
 
                 {/*Subpage - Climate*/}
-                <Route path="/precision-farming/crop-management" element={<ManagementCropDashboard/>} />
-                <Route path="/precision-farming/farming-record" element={<FarmingRecordDashboard/>} />
+                <Route path="/climate-condition/historical" element={<HistoricalDashboard/>} />
+                <Route path="/climate-condition/forecast" element={<ForecastDashboard/>} />
 
                 {/*Subpage - Precision Farming*/}
-                <Route path="/preci-condition/historical" element={<HistoricalDashboard/>} />
+                <Route path="/precision-farming/crop-management" element={<ManagementCropDashboard/>} />
+                <Route path="/precision-farming/farming-record" element={<FarmingRecordDashboard/>} />
+                <Route path="/precision-farming/crop" element={<Crop/>} />
+                <Route path="/precision-farming/crop/add" element={<AddCrop/>} />
+                <Route path="/precision-farming/crop/edit/:id" element={<EditCrop/>} />
 
                 {/*Subpage - User*/}
                 <Route path="/user" element={<User/>} />

@@ -24,7 +24,7 @@ const ProductList = () => {
         <div>
             <h1 className="title">Crops</h1>
             <h2 className="subtitle">List of Crops</h2>
-            <Link to="/crop/add" className="button is-primary mb-2">
+            <Link to="/precision-farming/crop/add" className="button is-primary mb-2">
                 Add New
             </Link>
             <table className="table is-striped is-fullwidth">
@@ -44,7 +44,7 @@ const ProductList = () => {
                         <td>{crop.USER_T.user_fullname}</td>
                         <td>
                             <Link
-                                to={`/crop/edit/${crop.crop_uuid}`}
+                                to={`/precision-farming/crop/edit/${crop.crop_uuid}`}
                                 className="button is-small is-info"
                             >
                                 Edit
