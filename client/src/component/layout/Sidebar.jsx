@@ -5,7 +5,7 @@ import {LogoutUser, reset} from "../../features/authSlice";
 
 import {IoHome, IoLogOut, IoPerson} from 'react-icons/io5'
 import {MdDataSaverOn} from 'react-icons/md'
-import {TiWeatherPartlySunny}   from 'react-icons/ti'
+import {TiWeatherPartlySunny} from 'react-icons/ti'
 import {GiFarmTractor} from 'react-icons/gi'
 import {FaChartPie} from 'react-icons/fa'
 
@@ -81,8 +81,9 @@ const Sidebar = () => {
                         <a onClick={toggleAnalyticsSubMenu}><FaChartPie/> Data Analytics</a>
                         {isAnalyticsSubMenuOpen &&
                             <ul>
-                                <li className="ml-1"><a>Visualization</a></li>
-                                <li className="ml-1"><a>Report</a></li>
+                                <li className="ml-1"><NavLink to="/data-analytics/visualization">Visualization</NavLink>
+                                </li>
+                                <li className="ml-1"><NavLink to="/data-analytics/report">Report</NavLink></li>
                             </ul>
                         }
                     </li>
