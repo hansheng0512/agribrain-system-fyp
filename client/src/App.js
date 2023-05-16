@@ -50,9 +50,8 @@ function App() {
                 <Route path="/user" element={<User/>} />
                 <Route path="/user/add" element={<AddUser/>} />
                 <Route path="/user/edit/:id" element={<EditUser/>} />
-                <Route path="/crop" element={<Crop/>} />
-                <Route path="/crop/add" element={<AddCrop/>} />
-                <Route path="/crop/edit/:id" element={<EditCrop/>} />
+
+
             </Routes>
         </BrowserRouter>
 
