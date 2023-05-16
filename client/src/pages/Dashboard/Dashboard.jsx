@@ -1,9 +1,9 @@
-import React,{useEffect} from 'react';
+import React, {useEffect} from 'react';
 import Layout from '../Layout/Layout';
 import Welcome from '../../component/layout/Welcome';
-import {useDispatch,useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import { getMe} from "../../features/authSlice"
+import {getMe} from "../../features/authSlice"
 
 const Dashboard = () => {
     const dispatch = useDispatch();

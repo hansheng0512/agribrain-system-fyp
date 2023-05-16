@@ -4,6 +4,7 @@ import UserList from "../../component/user/UserList";
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {getMe} from "../../features/authSlice";
+
 const Users = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
