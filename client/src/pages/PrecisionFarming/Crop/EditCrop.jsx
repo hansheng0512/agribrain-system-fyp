@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
-import Layout from '../Layout/Layout'
-import FormAddCrop from "../../component/crop/FormAddCrop";
+import Layout from '../../Layout/Layout'
+import FormEditCrop from "../../../component/precision/crop/FormEditCrop";
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import {getMe} from "../../features/authSlice";
+import {getMe} from "../../../features/authSlice";
 
-const AddCrop = () => {
+const EditCrop = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const {isError} =useSelector((state => state.auth));
@@ -21,9 +21,9 @@ const AddCrop = () => {
     }, [isError,navigate]);
     return (
         <Layout>
-            <FormAddCrop/>
+            <FormEditCrop/>
         </Layout>
     );
 };
 
-export default AddCrop;
+export default EditCrop;

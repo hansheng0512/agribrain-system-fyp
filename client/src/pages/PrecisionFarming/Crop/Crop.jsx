@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
-import Layout from '../Layout/Layout'
-import CropList from '../../component/crop/CropList'
+import Layout from '../../Layout/Layout'
+import CropList from '../../../component/precision/crop/CropList'
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import {getMe} from "../../features/authSlice";
+import {getMe} from "../../../features/authSlice";
 const Crop = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();

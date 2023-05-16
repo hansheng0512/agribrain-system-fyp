@@ -2,15 +2,18 @@ import {BrowserRouter, Routes,Route} from "react-router-dom";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Login from "./component/authentication/Login";
 import User from "./pages/User/User";
-import Crop from "./pages/Crop/Crop"
+import Crop from "./pages/PrecisionFarming/Crop/Crop"
 import AddUser from "./pages/User/AddUser";
 import EditUser from "./pages/User/EditUser";
-import AddCrop from "./pages/Crop/AddCrop";
-import EditCrop from "./pages/Crop/EditCrop";
+import AddCrop from "./pages/PrecisionFarming/Crop/AddCrop";
+import EditCrop from "./pages/PrecisionFarming/Crop/EditCrop";
 import Agribrain from "./pages/Agribrain/Agribrain";
 import SensorDashboard from "./pages/SensorMonitoring/SensorDashboard";
 import SoilDashboard from "./pages/SensorMonitoring/SoilDashboard";
 import SurroundingDashboard from "./pages/SensorMonitoring/SurroundingDashboard";
+import ClimateDashboard from "./pages/ClimateCondition/ClimateDashboard";
+import HistoricalDashboard from "./pages/ClimateCondition/HistoricalDashboard";
+import ForecastDashboard from "./pages/ClimateCondition/ForecastDashboard";
 function App() {
   return (
     <div>
@@ -21,10 +24,15 @@ function App() {
                 <Route path="/agribrain" element={<Agribrain/>} />
                 <Route path="/dashboard" element={<Dashboard/>} />
                 <Route path="/sensor-monitoring" element={<SensorDashboard/>} />
+                <Route path="/climate-condition" element={<ClimateDashboard/>} />
 
                 {/*Subpage - Sensor*/}
                 <Route path="/sensor-monitoring/soil" element={<SoilDashboard/>} />
                 <Route path="/sensor-monitoring/surrounding" element={<SurroundingDashboard/>} />
+
+                {/*Subpage - Climate*/}
+                <Route path="/climate-condition/historical" element={<HistoricalDashboard/>} />
+                <Route path="/climate-condition/forecast" element={<ForecastDashboard/>} />
 
                 {/*Subpage - User*/}
                 <Route path="/user" element={<User/>} />
