@@ -8,7 +8,7 @@ import EditUser from "./pages/User/EditUser";
 import AddCrop from "./pages/Crop/AddCrop";
 import EditCrop from "./pages/Crop/EditCrop";
 import Agribrain from "./pages/Agribrain/Agribrain";
-import SensorMonitoring from "./pages/SensorMonitoring/SensorMonitoring";
+import SensorDashboard from "./pages/SensorMonitoring/SensorDashboard";
 function App() {
   return (
     <div>
@@ -18,7 +18,7 @@ function App() {
                 {/*Main Page*/}
                 <Route path="/agribrain" element={<Agribrain/>} />
                 <Route path="/dashboard" element={<Dashboard/>} />
-                <Route path="/sensor-monitoring" element={<SensorMonitoring/>} />
+                <Route path="/sensor-monitoring" element={<SensorDashboard/>} />
 
                 {/*Subpage*/}
                 <Route path="/user" element={<User/>} />
