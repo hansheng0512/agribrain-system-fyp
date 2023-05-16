@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom";
 import {getMe} from "../../features/authSlice";
 import Layout from "../Layout/Layout";
 import ClimateCondition from "../../component/climate/ClimateCondition";
+import {Helmet} from "react-helmet";
 
 const ClimateDashboard = () => {
     const dispatch = useDispatch();
@@ -22,6 +23,9 @@ const ClimateDashboard = () => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>AgriBrain | Climate Condition</title>
+            </Helmet>
             <ClimateCondition/>
         </Layout>
     );

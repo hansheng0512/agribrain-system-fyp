@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom";
 import {getMe} from "../../features/authSlice";
 import Layout from "../Layout/Layout";
 import HistoricalClimate from "../../component/climate/HistoricalClimate";
+import {Helmet} from "react-helmet";
 
 const HistoricalDashboard = () => {
     const dispatch = useDispatch();
@@ -22,6 +23,9 @@ const HistoricalDashboard = () => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>AgriBrain | Historical Climate</title>
+            </Helmet>
             <HistoricalClimate/>
         </Layout>
     );

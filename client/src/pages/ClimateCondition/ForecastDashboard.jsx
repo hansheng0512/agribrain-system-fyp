@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom";
 import {getMe} from "../../features/authSlice";
 import Layout from "../Layout/Layout";
 import ForecastClimate from "../../component/climate/ForecastClimate";
+import {Helmet} from "react-helmet";
 
 const ForecastDashboard = () => {
     const dispatch = useDispatch();
@@ -22,6 +23,9 @@ const ForecastDashboard = () => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>AgriBrain | Forecast Climate</title>
+            </Helmet>
             <ForecastClimate/>
         </Layout>
     );

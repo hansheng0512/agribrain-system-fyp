@@ -4,6 +4,7 @@ import CropList from '../../../component/precision/crop/CropList'
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {getMe} from "../../../features/authSlice";
+import {Helmet} from "react-helmet";
 
 const Crop = () => {
     const dispatch = useDispatch();
@@ -21,6 +22,9 @@ const Crop = () => {
     }, [isError,navigate]);
     return (
         <Layout>
+            <Helmet>
+                <title>AgriBrain | Crop</title>
+            </Helmet>
             <CropList/>
         </Layout>
     );

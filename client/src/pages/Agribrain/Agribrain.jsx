@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {getMe} from "../../features/authSlice"
 import logo from "../../logo.png"
+import {Helmet} from "react-helmet";
 
 const Agribrain = () => {
     const dispatch = useDispatch();
@@ -22,6 +23,9 @@ const Agribrain = () => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>AgriBrain | Welcome</title>
+            </Helmet>
             <img src={logo} alt="logo" />
             <p className="has-text-centered ">
                 AgriBrain is a cutting-edge Smart Farming and Agriculture system that utilizes IoT and Data Analytics to revolutionize the agriculture industry. Our system collects real-time data from sensors and devices installed on farms, which is then processed and analyzed using advanced machine learning algorithms. This allows farmers to make informed decisions based on insights gained from the data, such as optimizing crop yields, reducing water and fertilizer usage, and detecting plant diseases early. AgriBrain is a user-friendly and cost-effective solution that is designed to meet the needs of farmers, agribusinesses, and research institutions alike.

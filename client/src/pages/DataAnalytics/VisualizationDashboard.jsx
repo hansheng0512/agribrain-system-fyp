@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom";
 import {getMe} from "../../features/authSlice";
 import Layout from "../Layout/Layout";
 import Visualization from "../../component/dataAnalytics/Visualization";
+import {Helmet} from "react-helmet";
 
 const VisualizationDashboard = () => {
     const dispatch = useDispatch();
@@ -22,6 +23,9 @@ const VisualizationDashboard = () => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>AgriBrain | Visualization</title>
+            </Helmet>
             <Visualization/>
         </Layout>
     );

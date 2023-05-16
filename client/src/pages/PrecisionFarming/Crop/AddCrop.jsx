@@ -4,6 +4,7 @@ import FormAddCrop from "../../../component/precision/crop/FormAddCrop";
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {getMe} from "../../../features/authSlice";
+import {Helmet} from "react-helmet";
 
 const AddCrop = () => {
     const dispatch = useDispatch();
@@ -21,6 +22,9 @@ const AddCrop = () => {
     }, [isError,navigate]);
     return (
         <Layout>
+            <Helmet>
+                <title>AgriBrain | Crop</title>
+            </Helmet>
             <FormAddCrop/>
         </Layout>
     );

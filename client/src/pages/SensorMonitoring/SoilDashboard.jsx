@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom";
 import {getMe} from "../../features/authSlice";
 import Layout from "../Layout/Layout";
 import Soil from "../../component/sensor/Soil";
+import {Helmet} from "react-helmet";
 
 const SoilDashboard = () => {
     const dispatch = useDispatch();
@@ -22,6 +23,9 @@ const SoilDashboard = () => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>AgriBrain | Soil Sensor</title>
+            </Helmet>
             <Soil/>
         </Layout>
     );

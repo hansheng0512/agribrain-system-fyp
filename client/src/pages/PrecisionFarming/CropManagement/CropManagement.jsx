@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom";
 import {getMe} from "../../../features/authSlice";
 import Layout from "../../Layout/Layout";
 import CropManagementList from "../../../component/precision/cropManagement/CropManagementList";
+import {Helmet} from "react-helmet";
 
 const ManagementCropDashboard = () => {
     const dispatch = useDispatch();
@@ -22,6 +23,9 @@ const ManagementCropDashboard = () => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>AgriBrain | Crop Management</title>
+            </Helmet>
             <CropManagementList/>
         </Layout>
     );

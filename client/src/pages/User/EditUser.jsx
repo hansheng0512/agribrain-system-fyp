@@ -4,6 +4,7 @@ import FormEditUser from "../../component/user/FormEditUser";
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {getMe} from "../../features/authSlice";
+import {Helmet} from "react-helmet";
 
 const EditUser = () => {
     const dispatch = useDispatch();
@@ -25,6 +26,9 @@ const EditUser = () => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>AgriBrain | User</title>
+            </Helmet>
             <FormEditUser/>
         </Layout>
     );

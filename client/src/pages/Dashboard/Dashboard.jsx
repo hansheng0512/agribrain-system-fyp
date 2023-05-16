@@ -4,6 +4,7 @@ import Welcome from '../../component/layout/Welcome';
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {getMe} from "../../features/authSlice"
+import {Helmet} from "react-helmet";
 
 const Dashboard = () => {
     const dispatch = useDispatch();
@@ -22,6 +23,9 @@ const Dashboard = () => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>AgriBrain | Dashboard</title>
+            </Helmet>
             <Welcome/>
         </Layout>
     );

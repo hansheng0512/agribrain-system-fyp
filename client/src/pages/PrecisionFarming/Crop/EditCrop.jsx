@@ -4,6 +4,7 @@ import FormEditCrop from "../../../component/precision/crop/FormEditCrop";
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {getMe} from "../../../features/authSlice";
+import {Helmet} from "react-helmet";
 
 const EditCrop = () => {
     const dispatch = useDispatch();
@@ -21,6 +22,9 @@ const EditCrop = () => {
     }, [isError,navigate]);
     return (
         <Layout>
+            <Helmet>
+                <title>AgriBrain | Crop</title>
+            </Helmet>
             <FormEditCrop/>
         </Layout>
     );

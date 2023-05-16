@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom";
 import {getMe} from "../../features/authSlice";
 import Layout from "../Layout/Layout";
 import Surrounding from "../../component/sensor/Surrounding";
+import {Helmet} from "react-helmet";
 
 const SurroundingDashboard = () => {
     const dispatch = useDispatch();
@@ -22,6 +23,9 @@ const SurroundingDashboard = () => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>AgriBrain | Surrounding Sensor</title>
+            </Helmet>
             <Surrounding/>
         </Layout>
     );

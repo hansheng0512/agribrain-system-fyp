@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom";
 import {getMe} from "../../../features/authSlice";
 import Layout from "../../Layout/Layout";
 import FarmingRecord from "../../../component/precision/farmingRecord/FarmingRecord";
+import {Helmet} from "react-helmet";
 
 const FarmingRecordDashboard = () => {
     const dispatch = useDispatch();
@@ -22,6 +23,9 @@ const FarmingRecordDashboard = () => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>AgriBrain | Farming Record</title>
+            </Helmet>
             <FarmingRecord/>
         </Layout>
     );

@@ -4,6 +4,7 @@ import UserList from "../../component/user/UserList";
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {getMe} from "../../features/authSlice";
+import {Helmet} from "react-helmet";
 
 const Users = () => {
     const dispatch = useDispatch();
@@ -25,6 +26,9 @@ const Users = () => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>AgriBrain | User</title>
+            </Helmet>
             <UserList/>
         </Layout>
     );

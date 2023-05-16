@@ -4,6 +4,7 @@ const Soil = () => {
     return (
         <div>
             <h1 className="title">Soil</h1>
+
         </div>
     );
 };
