@@ -9,6 +9,8 @@ import AddCrop from "./pages/Crop/AddCrop";
 import EditCrop from "./pages/Crop/EditCrop";
 import Agribrain from "./pages/Agribrain/Agribrain";
 import SensorDashboard from "./pages/SensorMonitoring/SensorDashboard";
+import SoilDashboard from "./pages/SensorMonitoring/SoilDashboard";
+import SurroundingDashboard from "./pages/SensorMonitoring/SurroundingDashboard";
 function App() {
   return (
     <div>
@@ -20,7 +22,11 @@ function App() {
                 <Route path="/dashboard" element={<Dashboard/>} />
                 <Route path="/sensor-monitoring" element={<SensorDashboard/>} />
 
-                {/*Subpage*/}
+                {/*Subpage - Sensor*/}
+                <Route path="/sensor-monitoring/soil" element={<SoilDashboard/>} />
+                <Route path="/sensor-monitoring/surrounding" element={<SurroundingDashboard/>} />
+
+                {/*Subpage - User*/}
                 <Route path="/user" element={<User/>} />
                 <Route path="/user/add" element={<AddUser/>} />
                 <Route path="/user/edit/:id" element={<EditUser/>} />

@@ -15,10 +15,19 @@ const Layout = ({children}) => {
                     <Sidebar/>
                 </div>
                 <div className="column has-background-light">
-                    <p style={{marginTop:"1vh",textAlign: "right",padding:"1vh",marginRight:"4vw"}}>
-                        {user && user.user.user_fullname}
-                        <IoPerson style={{marginLeft: "1vw"}}/>
-                    </p>
+                    <nav className="breadcrumb" aria-label="breadcrumbs">
+                        <p style={{marginTop:"1vh",textAlign: "right",padding:"1vh",marginRight:"4vw"}}>
+                            {user && user.user.user_fullname}
+                            <IoPerson style={{marginLeft: "1vw"}}/>
+                        </p>
+                        <ul>
+                            <li><a href="#">Bulma</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Components</a></li>
+                            <li className="is-active"><a href="#" aria-current="page">Breadcrumb</a></li>
+                        </ul>
+                    </nav>
+
                     <main>
                         <div style={{marginTop:"1vh",marginRight:"2vw",marginLeft:"2vw",marginBottom:"3vh",minHeight:"85vh",backgroundColor:"white",padding:"3vh"}}>
                             {children}

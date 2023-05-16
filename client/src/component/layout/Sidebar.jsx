@@ -53,8 +53,8 @@ const Sidebar = () => {
                         <a onClick={toggleSensorSubMenu}><MdDataSaverOn/> Sensor Monitoring </a>
                         {isSensorSubMenuOpen &&
                             <ul>
-                                <li className="ml-1"><a>Soil</a></li>
-                                <li className="ml-1"><a>Surrounding</a></li>
+                                <li className="ml-1"><NavLink to="/sensor-monitoring/soil">Soil</NavLink></li>
+                                <li className="ml-1"><NavLink to="/sensor-monitoring/surrounding">Surrounding</NavLink></li>
                             </ul>
                         }
                     </li>
