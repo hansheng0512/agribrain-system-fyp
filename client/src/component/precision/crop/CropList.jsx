@@ -10,13 +10,13 @@ const ProductList = () => {
     }, []);
 
     const getCrops = async () => {
-        const response = await axios.get("http://localhost:5000/crop");
+        const response = await axios.get("http://localhost:5000/api/v1/crop");
         setCrop(response.data);
         console.log(response.data);
     };
 
     const deleteProduct = async (cropId) => {
-        await axios.delete(`http://localhost:5000/crop/${cropId}`);
+        await axios.delete(`http://localhost:5000/api/v1/crop/${cropId}`);
         getCrops();
     };
 

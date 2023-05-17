@@ -12,7 +12,7 @@ const FormAddCrop = () => {
     const handleSaveCrop = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:5000/crop",{
+            await axios.post("http://localhost:5000/api/v1/crop",{
                 crop_name:name,
             })
             navigate("/crop");

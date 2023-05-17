@@ -12,7 +12,7 @@ const FormEditCrop = () => {
     useEffect(()=>{
         const getCropById = async() => {
             try{
-                const response = await axios.get(`http://localhost:5000/crop/${id}`)
+                const response = await axios.get(`http://localhost:5000/api/v1/crop/${id}`)
                 setName(response.data.name);
             }catch (error){
                 if(error.response){
@@ -26,10 +26,10 @@ const FormEditCrop = () => {
     const handleUpdateCrop = async (e) => {
         e.preventDefault();
         try {
-            await axios.patch(`http://localhost:5000/crop/${id}`,{
+            await axios.patch(`http://localhost:5000/api/v1/crop/${id}`,{
                 crop_name:name,
             })
-            navigate("/crop");
+            navigate("/precision-farming/crop");
         }catch (error) {
             if(error.response){
                 setMessage(error.response.data.message);
