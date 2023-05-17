@@ -11,11 +11,11 @@ import {farmerOnly} from "../middleware/AuthUser.js";
 
 const router = express.Router();
 //
-router.get('/user',verifyUser,farmerOnly,getUser);
-router.get('/user/:id',verifyUser,farmerOnly,getUserById);
-router.post('/user',verifyUser,farmerOnly,createUser);
-router.patch('/user/:id',verifyUser,farmerOnly,updateUser);
-router.delete('/user/:id',verifyUser,farmerOnly,deleteUser);
+router.get('/api/v1/user',verifyUser,farmerOnly,getUser);
+router.get('/api/v1/user/:id',verifyUser,farmerOnly,getUserById);
+router.post('/api/v1/user',verifyUser,farmerOnly,createUser);
+router.patch('/api/v1/user/:id',verifyUser,farmerOnly,updateUser);
+router.delete('/api/v1/user/:id',verifyUser,farmerOnly,deleteUser);
 
 
 

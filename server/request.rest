@@ -1,6 +1,6 @@
 ###
 //Create a new user (Admin)
-POST http://localhost:5000/user
+POST http://localhost:5000/api/v1/user
 Content-Type: application/json
 
 {
@@ -14,7 +14,7 @@ Content-Type: application/json
 
 ###
 //Create a new user (Farmer)
-POST http://localhost:5000/user
+POST http://localhost:5000/api/v1/user
 Content-Type: application/json
 
 {
@@ -29,7 +29,7 @@ Content-Type: application/json
 
 ###
 //Create a new user (Farmer)
-POST http://localhost:5000/user
+POST http://localhost:5000/api/v1/user
 Content-Type: application/json
 
 {
@@ -43,19 +43,19 @@ Content-Type: application/json
 
 ###
 //Get All User
-GET http://localhost:5000/user
+GET http://localhost:5000/api/v1/user
 
 ###
 //Get User By Id
-GET http://localhost:5000/user/9db8f238-9c7a-4ff5-bebb-84fe5ebba2da
+GET http://localhost:5000/api/v1/user/be7145a9-931b-4518-9490-9574a72d03ee
 
 ###
 //Get User By Id
-GET http://localhost:5000/user/cc38cb7a-1255-4f48-b0e0-498324ff777d
+GET http://localhost:5000/api/v1/user/cc38cb7a-1255-4f48-b0e0-498324ff777d
 
 ###
 //Update user (Admin)
-PATCH http://localhost:5000/user/9db8f238-9c7a-4ff5-bebb-84fe5ebba2da
+PATCH http://localhost:5000/api/v1/user/9db8f238-9c7a-4ff5-bebb-84fe5ebba2da
 Content-Type: application/json
 
 {
@@ -69,7 +69,7 @@ Content-Type: application/json
 
 ###
 //Update user (Admin)
-PATCH http://localhost:5000/user/cc38cb7a-1255-4f48-b0e0-498324ff777d
+PATCH http://localhost:5000/api/v1/user/cc38cb7a-1255-4f48-b0e0-498324ff777d
 Content-Type: application/json
 
 {
@@ -83,7 +83,7 @@ Content-Type: application/json
 
 ###
 //delete user
-DELETE http://localhost:5000/user/bec0e7f5-4a81-4e97-aca0-e6f271efc7b5
+DELETE http://localhost:5000/api/v1/user/bec0e7f5-4a81-4e97-aca0-e6f271efc7b5
 
 ###
 //Login user (Admin)

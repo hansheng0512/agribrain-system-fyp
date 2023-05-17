@@ -18,7 +18,7 @@ const FormEditUser = () => {
     useEffect(()=>{
         const getUserById = async() => {
             try{
-                const response = await axios.get(`http://localhost:5000/user/${id}`)
+                const response = await axios.get(`http://localhost:5000/api/v1/user/${id}`)
                 console.log(response.data)
                 const userData = response.data[0];
                 setName(userData.user_fullname);
@@ -38,7 +38,7 @@ const FormEditUser = () => {
     const handleUpdateUser = async (e) => {
         e.preventDefault();
         try {
-            await axios.patch(`http://localhost:5000/user/${id}`,{
+            await axios.patch(`http://localhost:5000/api/v1/user/${id}`,{
                 user_fullname:name,
                 user_email:email,
                 user_password:password,

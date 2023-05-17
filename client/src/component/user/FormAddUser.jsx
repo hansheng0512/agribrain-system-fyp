@@ -16,7 +16,7 @@ const FormAddUser = () => {
     const handleSaveUser = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:5000/user",{
+            await axios.post("http://localhost:5000/api/v1/user",{
                 user_fullname:name,
                 user_email:email,
                 user_password:password,
