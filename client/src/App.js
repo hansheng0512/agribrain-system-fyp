@@ -20,6 +20,7 @@ import FarmingRecordDashboard from "./pages/PrecisionFarming/FarmingRecord/FarmR
 import DataAnalyticsDashboard from "./pages/DataAnalytics/DataAnalyticsDashboard";
 import VisualizationDashboard from "./pages/DataAnalytics/VisualizationDashboard";
 import ReportDashboard from "./pages/DataAnalytics/ReportDashboard";
+import AddFarming from "./pages/PrecisionFarming/FarmingRecord/AddFarming";
 
 function App() {
     return (
@@ -31,21 +32,22 @@ function App() {
                     <Route path="/agribrain" element={<Agribrain/>}/>
                     <Route path="/dashboard" element={<Dashboard/>}/>
                     <Route path="/sensor-monitoring" element={<SensorDashboard/>}/>
-                <Route path="/climate-condition" element={<ClimateDashboard/>} />
+                    <Route path="/climate-condition" element={<ClimateDashboard/>} />
                     <Route path="/precision-farming" element={<PrecisionDashboard/>}/>
                     <Route path="/data-analytics" element={<DataAnalyticsDashboard/>}/>
 
-                {/*Subpage - Sensor*/}
-                <Route path="/sensor-monitoring/soil" element={<SoilDashboard/>} />
-                <Route path="/sensor-monitoring/surrounding" element={<SurroundingDashboard/>} />
+                    {/*Subpage - Sensor*/}
+                    <Route path="/sensor-monitoring/soil" element={<SoilDashboard/>} />
+                    <Route path="/sensor-monitoring/surrounding" element={<SurroundingDashboard/>} />
 
-                {/*Subpage - Climate*/}
+                    {/*Subpage - Climate*/}
                     <Route path="/climate-condition/historical" element={<HistoricalDashboard/>}/>
                     <Route path="/climate-condition/forecast" element={<ForecastDashboard/>}/>
 
                     {/*Subpage - Precision Farming*/}
                     <Route path="/precision-farming/crop-management" element={<ManagementCropDashboard/>}/>
                     <Route path="/precision-farming/farming-record" element={<FarmingRecordDashboard/>}/>
+                    <Route path="/precision-farming/farming-record/add" element={<AddFarming/>}/>
                     <Route path="/precision-farming/crop" element={<Crop/>}/>
                     <Route path="/precision-farming/crop/add" element={<AddCrop/>}/>
                     <Route path="/precision-farming/crop/edit/:id" element={<EditCrop/>}/>
