@@ -22,7 +22,7 @@ Content-Type: application/json
   "user_email": "lekyew@gmail.com",
   "user_password": "yew",
   "user_confirmPassword": "yew",
-  "user_role": "Farmer",
+  "user_role": "Worker",
   "user_phone": "0146618038"
 }
 
@@ -47,15 +47,15 @@ GET http://localhost:5000/api/v1/user
 
 ###
 //Get User By Id
-GET http://localhost:5000/api/v1/user/be7145a9-931b-4518-9490-9574a72d03ee
+GET http://localhost:5000/api/v1/user/1036cfc6-e5f3-4ba0-bbf5-c656244e7fce
 
 ###
 //Get User By Id
-GET http://localhost:5000/api/v1/user/cc38cb7a-1255-4f48-b0e0-498324ff777d
+GET http://localhost:5000/api/v1/user/86ec121e-a1a4-417e-a198-2a8998eaafad
 
 ###
 //Update user (Admin)
-PATCH http://localhost:5000/api/v1/user/9db8f238-9c7a-4ff5-bebb-84fe5ebba2da
+PATCH http://localhost:5000/api/v1/user/1036cfc6-e5f3-4ba0-bbf5-c656244e7fce
 Content-Type: application/json
 
 {
@@ -117,25 +117,25 @@ DELETE http://localhost:5000/logout
 
 ###
 //Get All CropList
-GET http://localhost:5000/crop
+GET http://localhost:5000/api/v1/crop
 
 ###
 //Create CropList
-POST http://localhost:5000/crop
+POST http://localhost:5000/api/v1/crop
 Content-Type: application/json
 
 {
-  "crop_name": "Lettuce"
+  "crop_name": "Cucumber"
 }
 
 ###
 //Get CropList by id
-GET http://localhost:5000/crop/4af7cb88-c911-47d1-a800-7422e79cf5cc
+GET http://localhost:5000/api/v1/crop/4af7cb88-c911-47d1-a800-7422e79cf5cc
 
 
 ###
 //Update CropList
-PATCH http://localhost:5000/crop/4af7cb88-c911-47d1-a800-7422e79cf5cc
+PATCH http://localhost:5000/api/v1/crop/4af7cb88-c911-47d1-a800-7422e79cf5cc
 Content-Type: application/json
 
 {
@@ -145,5 +145,18 @@ Content-Type: application/json
 
 ###
 //Delete CropList
-DELETE http://localhost:5000/crop/042145b4-a148-442e-a823-1fefb610ad32
+DELETE http://localhost:5000/api/v1/crop/042145b4-a148-442e-a823-1fefb610ad32
 
+###
+//Create FarmingList
+POST http://localhost:5000/api/v1/farming
+Content-Type: application/json
+
+{
+  "cropId": 2,
+  "farming_name": "Irrigation",
+  "farming_date": "2023-05-14"
+}
+
+###
+GET http://localhost:5000/api/v1/farming
