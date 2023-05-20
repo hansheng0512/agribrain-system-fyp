@@ -18,6 +18,7 @@ const FarmingRecord = () => {
     return (
         <div>
             <h1 className="title">Farming Record</h1>
+            <h2 className="subtitle">List of Farming Records</h2>
             <Link to="/precision-farming/farming-record/add" className="button mb-2" style={{backgroundColor:'#71AF9D',color:"white"}}>
                 Add New
             </Link>
