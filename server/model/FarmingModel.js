@@ -40,7 +40,6 @@ const Farming = db.define('FARMING_T',{
             notEmpty:true,
         }
     },
-
     userId:{
         type: DataTypes.INTEGER,
         allowNull:true,

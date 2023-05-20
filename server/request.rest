@@ -153,9 +153,9 @@ POST http://localhost:5000/api/v1/farming
 Content-Type: application/json
 
 {
-  "cropId": 2,
+  "cropId": "1",
   "farming_name": "Irrigation",
-  "farming_date": "2023-05-14"
+  "farming_date": "2023-05-10"
 }
 
 ###
