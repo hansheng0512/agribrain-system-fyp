@@ -12,7 +12,6 @@ const ProductList = () => {
     const getCrops = async () => {
         const response = await axios.get("http://localhost:5000/api/v1/crop");
         setCrop(response.data);
-        console.log(response.data);
     };
 
     const deleteProduct = async (cropId) => {
