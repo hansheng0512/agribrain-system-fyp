@@ -24,7 +24,7 @@ const ProductList = () => {
         <div>
             <h1 className="title">Crops</h1>
             <h2 className="subtitle">List of Crops</h2>
-            <Link to="/precision-farming/crop/add" className="button is-primary mb-2">
+            <Link to="/precision-farming/crop/add" className="button mb-2" style={{backgroundColor:'#71AF9D',color:"white"}}>
                 Add New
             </Link>
             <table className="table is-striped is-fullwidth">

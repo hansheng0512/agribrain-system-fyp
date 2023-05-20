@@ -11,6 +11,12 @@ const FormAddCrop = () => {
 
     const handleSaveCrop = async (e) => {
         e.preventDefault();
+
+        if (name.trim() === '') {
+            setMessage('Crop Name cannot be empty.');
+            return;
+        }
+
         try {
             await axios.post("http://localhost:5000/api/v1/crop",{
                 crop_name:name,
@@ -31,9 +37,7 @@ const FormAddCrop = () => {
                 <div className="card-content">
                     <div className="content">
                         <form onSubmit={handleSaveCrop}>
-                            <p className="has-text-centered">
-                                {message}
-                            </p>
+                            <p className="has-text-centered has-text-danger">{message}</p>
                             <div className="field">
                                 <label className="label"> Crop Name</label>
                                 <div className="control">
@@ -48,7 +52,7 @@ const FormAddCrop = () => {
                             </div>
                             <div className="field">
                                 <div className="control">
-                                    <button type="submit" className="button is-success">
+                                    <button type="submit" className="button" style={{backgroundColor:'#71AF9D',color:"white"}}>
                                         Save
                                     </button>
                                 </div>

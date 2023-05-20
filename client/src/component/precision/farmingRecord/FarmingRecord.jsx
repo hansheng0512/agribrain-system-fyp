@@ -19,7 +19,7 @@ const FarmingRecord = () => {
     return (
         <div>
             <h1 className="title">FarmingRecord</h1>
-            <Link to="/precision-farming/farming-record/add" className="button is-primary mb-2">
+            <Link to="/precision-farming/farming-record/add" className="button mb-2" style={{backgroundColor:'#71AF9D',color:"white"}}>
                 Add New
             </Link>
             <table className="table is-striped is-fullwidth">
