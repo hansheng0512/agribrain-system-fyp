@@ -46,9 +46,10 @@ app.use(express.json());
 app.use(UserRoute);
 app.use(CropRoute);
 app.use(AuthRoute);
-// app.use(FarmingRoute);
-// app.use(CropManagementRoute);
-// app.use(SensorRoute);
+app.use(FarmingRoute);
+app.use(CropManagementRoute);
+app.use(SensorRoute);
+
 
 // store.sync();
 

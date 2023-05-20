@@ -39,14 +39,21 @@ const Farming = db.define('FARMING_T',{
         validate: {
             notEmpty:true,
         }
+    },
+
+    userId:{
+        type: DataTypes.INTEGER,
+        allowNull:true,
+        validate: {
+            notEmpty:true,
+        }
     }
 
 },{
     freezeTableName:true,
 });
 
-Crop.hasMany(Farming);
 Farming.belongsTo(Crop,{foreignKey:'cropId'});
-
+Farming.belongsTo(User,{foreignKey:'userId'});
 
 export default Farming;

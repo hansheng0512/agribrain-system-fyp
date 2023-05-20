@@ -1,6 +1,7 @@
 import {Sequelize} from "sequelize";
 import db from '../config/Database.js'
 import Crop from "./CropModel.js";
+import User from "./UserModel.js";
 
 const {DataTypes} = Sequelize;
 
@@ -56,12 +57,21 @@ const CropManagement = db.define('CROP_MANAGEMENT_T',{
         }
     },
 
+    userId:{
+        type: DataTypes.INTEGER,
+        allowNull:true,
+        validate: {
+            notEmpty:true,
+        }
+    }
+
 },{
     freezeTableName:true,
 });
 
-Crop.hasMany(CropManagement);
+// Crop.hasMany(CropManagement);
 CropManagement.belongsTo(Crop,{foreignKey:'cropId'});
+CropManagement.belongsTo(User,{foreignKey:'userId'});
 
 export default CropManagement;
 
