@@ -103,7 +103,7 @@ const FormAddUser = () => {
                                     <div className="select is-fullwidth">
                                         <select value={role} onChange={(e)=>setRole(e.target.value)}>
                                             <option value="Farmer">Farmer</option>
-                                            <option value="Farmer">Worker</option>
+                                            <option value="Worker">Worker</option>
                                         </select>
                                     </div>
                                 </div>
