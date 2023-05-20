@@ -9,6 +9,8 @@ import FarmingRoute from "./route/FarmingRoute.js";
 import CropRoute from "./route/CropRoute.js";
 import AuthRoute from "./route/AuthRoute.js";
 import CropManagementRoute from "./route/CropManagementRoute.js";
+import SensorRoute from "./route/SensorRoute.js";
+
 
 dotenv.config();
 
@@ -42,12 +44,16 @@ app.use(cors({
 
 app.use(express.json());
 app.use(UserRoute);
-app.use(FarmingRoute);
 app.use(CropRoute);
-app.use(CropManagementRoute);
 app.use(AuthRoute);
+// app.use(FarmingRoute);
+// app.use(CropManagementRoute);
+// app.use(SensorRoute);
 
 // store.sync();
+
+
+
 
 app.listen(process.env.APP_PORT,() => {
     console.log("Server up and running...");
