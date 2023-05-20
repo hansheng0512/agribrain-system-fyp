@@ -1,29 +1,38 @@
 import Crop from "../model/CropModel.js";
 import User from "../model/UserModel.js";
 import {Op} from "sequelize"
+import Farming from "../model/FarmingModel.js";
+
 export const getCrop = async (req,res) =>{
     try{
         let response;
-        if(req.user_role === "Farmer"){
-            response = await Crop.findAll(({
-                attributes:['crop_uuid','crop_name'],
-                include:[{
-                    model:User,
-                    attributes:['user_fullname','user_email'],
-                }]
-            }))
-        }else{
-            response = await Crop.findAll(({
-                attributes:['crop_uuid','crop_name'],
-                where: {
-                  userId: req.userId
-                },
-                include:[{
-                    model:User,
-                    attributes:['user_fullname','user_email'],
-                }]
-            }))
-        }
+        response = await Crop.findAll(({
+            attributes:['crop_uuid','crop_name'],
+            include:[{
+                model:User,
+                attributes:['user_fullname','user_email'],
+            }]
+        }))
+        // if(req.user_role === "Farmer"){
+        //     response = await Crop.findAll(({
+        //         attributes:['crop_uuid','crop_name'],
+        //         include:[{
+        //             model:User,
+        //             attributes:['user_fullname','user_email'],
+        //         }]
+        //     }))
+        // }else{
+        //     response = await Crop.findAll(({
+        //         attributes:['crop_uuid','crop_name'],
+        //         where: {
+        //           userId: req.userId
+        //         },
+        //         include:[{
+        //             model:User,
+        //             attributes:['user_fullname','user_email'],
+        //         }]
+        //     }))
+        // }
         res.status(200).json(response);
 
     }catch (error){
