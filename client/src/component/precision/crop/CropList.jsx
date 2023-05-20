@@ -26,7 +26,7 @@ const CropList = () => {
             <Link to="/precision-farming/crop/add" className="button mb-2" style={{backgroundColor:'#71AF9D',color:"white"}}>
                 Add New
             </Link>
-            <table className="table is-bordered is-striped is-fullwidth">
+            <table className="table is-bordered is-hoverable is-fullwidth">
                 <thead>
                 <tr style={{ backgroundColor: '#E1F6F0' }}>
                     <th>No</th>

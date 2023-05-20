@@ -33,7 +33,7 @@ const PrecisionFarming = () => {
 
         {/*    Crop Table */}
             <h1 className="subtitle is-underlined">Crop Listing</h1>
-            <table className="table is-bordered is-striped is-fullwidth mb-6">
+            <table className="table is-bordered is-hoverable is-fullwidth mb-6">
                 <thead>
                 <tr style={{ backgroundColor: '#E1F6F0' }}>
                     <th>No</th>
@@ -54,7 +54,7 @@ const PrecisionFarming = () => {
 
         {/*    Farming Table*/}
             <h1 className="subtitle is-underlined">Farming Listing</h1>
-            <table className="table is-bordered is-striped is-fullwidth mb-6">
+            <table className="table is-bordered is-hoverable is-fullwidth mb-6">
                 <thead>
                 <tr style={{ backgroundColor: '#E1F6F0' }}>
                     <th>No</th>
