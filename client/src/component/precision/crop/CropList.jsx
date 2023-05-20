@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
 
-const ProductList = () => {
+const CropList = () => {
     const [crop, setCrop] = useState([]);
 
     useEffect(() => {
@@ -26,9 +26,9 @@ const ProductList = () => {
             <Link to="/precision-farming/crop/add" className="button mb-2" style={{backgroundColor:'#71AF9D',color:"white"}}>
                 Add New
             </Link>
-            <table className="table is-striped is-fullwidth">
+            <table className="table is-bordered is-striped is-fullwidth">
                 <thead>
-                <tr>
+                <tr style={{ backgroundColor: '#E1F6F0' }}>
                     <th>No</th>
                     <th>Crop Name</th>
                     <th>Created By</th>
@@ -63,4 +63,4 @@ const ProductList = () => {
     );
 };
 
-export default ProductList;
+export default CropList;
