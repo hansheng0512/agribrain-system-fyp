@@ -7,7 +7,7 @@ export const getCrop = async (req,res) =>{
     try{
         let response;
         response = await Crop.findAll(({
-            attributes:['crop_uuid','crop_name'],
+            attributes:['id','crop_uuid','crop_name'],
             include:[{
                 model:User,
                 attributes:['user_fullname','user_email'],
