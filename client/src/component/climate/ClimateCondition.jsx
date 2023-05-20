@@ -10,8 +10,11 @@ const ClimateCondition = () => {
                 <div
                     className="column is-one-third p-6"
                     style={{
-                        background: '#f2f3f4',
+                        background: 'white',
                         borderRadius: '8px 0 0 8px',
+                        borderTop:'1px solid #ccc',
+                        borderLeft:'1px solid #ccc',
+                        borderBottom:'1px solid #ccc',
                     }}
                 >
                     {/*<h1 className="title mt-3">Cameron Highlands</h1>*/}
@@ -68,6 +71,9 @@ const ClimateCondition = () => {
                     style={{
                         background: '#E1F6F0',
                         borderRadius: '0 8px 8px 0',
+                        borderTop:'1px solid #ccc',
+                        borderRight:'1px solid #ccc',
+                        borderBottom:'1px solid #ccc',
                     }}
                 >
                     <h1>Week</h1>
