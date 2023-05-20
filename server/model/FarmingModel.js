@@ -25,8 +25,8 @@ const Farming = db.define('FARMING_T',{
     },
 
     farming_date:{
-        type: DataTypes.DATE,
-        allowNull:false,
+        type: DataTypes.STRING,
+        allowNull:true,
         validate: {
             notEmpty:true,
             isDate:true
@@ -35,7 +35,7 @@ const Farming = db.define('FARMING_T',{
 
     cropId:{
         type: DataTypes.INTEGER,
-        allowNull:false,
+        allowNull:true,
         validate: {
             notEmpty:true,
         }

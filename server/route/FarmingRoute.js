@@ -10,10 +10,10 @@ import {verifyUser} from "../middleware/AuthUser.js";
 
 const router = express.Router();
 
-router.get('/farming',getFarming);
-router.get('/farming/:id',getFarmingById);
-router.post('/farming',createFarming);
-router.patch('/farming/:id',updateFarming);
-router.delete('/farming/:id',deleteFarming);
+router.get('/api/v1/farming',verifyUser,getFarming);
+router.get('/api/v1/farming/:id',verifyUser,getFarmingById);
+router.post('/api/v1/farming',verifyUser,createFarming);
+router.patch('/api/v1/farming/:id',verifyUser,updateFarming);
+router.delete('/api/v1/farming/:id',verifyUser,deleteFarming);
 
 export default router;
