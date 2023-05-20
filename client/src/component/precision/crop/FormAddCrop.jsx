@@ -15,7 +15,7 @@ const FormAddCrop = () => {
             await axios.post("http://localhost:5000/api/v1/crop",{
                 crop_name:name,
             })
-            navigate("/crop");
+            navigate("/precision-farming/crop");
         }catch (error) {
             if(error.response){
                 setMessage(error.response.data.message);
