@@ -7,12 +7,15 @@ import axios from 'axios';
 const FormAddFarming = () => {
     const [name, setName] = useState('');
     const [otherName, setOtherName] = useState('');
-    const [date, setDate] = useState(new Date()); // Set initial date to current date
+    const [date, setDate] = useState(null); // Set initial date to current date
     const [cropId, setCropId] = useState('');
     const [message, setMessage] = useState('');
     const [crops, setCrops] = useState([]); // State to hold the fetched crops
 
     const navigate = useNavigate();
+
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0);
 
     useEffect(() => {
         getCrops();
@@ -29,9 +32,26 @@ const FormAddFarming = () => {
 
     const handleSaveFarming = async (e) => {
         e.preventDefault();
+
+        if (date === null) {
+            setMessage('Date cannot be empty.');
+            return;
+        }
+
         const formattedDate = date.toISOString().split('T')[0];
         let farmingName = name === 'Other' ? otherName : name;
         farmingName = farmingName.charAt(0).toUpperCase() + farmingName.slice(1).toLowerCase();
+
+        if (farmingName.trim() === '') {
+            setMessage('Farming Name cannot be empty.');
+            return;
+        }
+
+        if (cropId.trim() === '') {
+            setMessage('Crop Name cannot be empty.');
+            return;
+        }
+
         try {
             await axios.post("http://localhost:5000/api/v1/farming", {
                 cropId: cropId,
@@ -62,9 +82,7 @@ const FormAddFarming = () => {
                 <div className="card-content">
                     <div className="content">
                         <form onSubmit={handleSaveFarming}>
-                            <p className="has-text-centered">
-                                {message}
-                            </p>
+                            <p className="has-text-centered has-text-danger">{message}</p>
                             <div className="field">
                                 <label className="label">Farming Name</label>
                                 <div className="control mb-3">
@@ -98,6 +116,7 @@ const FormAddFarming = () => {
                                         onChange={(date) => setDate(date)}
                                         dateFormat="yyyy-MM-dd"
                                         placeholderText="Select a date"
+                                        maxDate={currentDate}
                                     />
                                 </div>
                                 <label className="label">Crop</label>
@@ -116,7 +135,7 @@ const FormAddFarming = () => {
                             </div>
                             <div className="field">
                                 <div className="control mb-3">
-                                    <button type="submit" className="button is-success">
+                                    <button type="submit" className="button" style={{backgroundColor:'#71AF9D',color:"white"}}>
                                         Save
                                     </button>
                                 </div>
