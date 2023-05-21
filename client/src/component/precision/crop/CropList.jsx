@@ -6,7 +6,6 @@ import { FaFilter } from "react-icons/fa";
 const CropList = () => {
     const [crop, setCrop] = useState([]);
     const [filterText, setFilterText] = useState("");
-    const [isFilterVisible, setIsFilterVisible] = useState(false);
     const [deleteConfirmation, setDeleteConfirmation] = useState(null);
 
     useEffect(() => {
@@ -26,10 +25,6 @@ const CropList = () => {
 
     const handleFilterChange = (e) => {
         setFilterText(e.target.value);
-    };
-
-    const handleFilterIconHover = () => {
-        setIsFilterVisible(!isFilterVisible);
     };
 
     const filteredCrops = crop.filter((crop) => {
@@ -73,8 +68,8 @@ const CropList = () => {
                             style={{ minWidth: "20vw", maxWidth: "25vw" }}
                         />
                         <span className="icon is-small is-left">
-              <FaFilter className="filter-icon" />
-            </span>
+                            <FaFilter className="filter-icon" />
+                        </span>
                     </p>
                 </div>
             </div>
