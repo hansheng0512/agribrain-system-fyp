@@ -101,7 +101,7 @@ const FarmingRecord = () => {
                 <td>{record.farming_name}</td>
                 <td className="has-text-centered">{record.farming_date}</td>
                 <td className="has-text-centered">{record.CROP_T.crop_name}</td>
-                <td>{record.USER_T.user_fullname}</td>
+                <td className="has-text-centered">{record.USER_T.user_fullname}</td>
             </tr>
         );
     };

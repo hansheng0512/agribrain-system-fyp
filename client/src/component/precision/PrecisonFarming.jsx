@@ -47,7 +47,7 @@ const PrecisionFarming = () => {
                 <td>{record.farming_name}</td>
                 <td className="has-text-centered">{record.farming_date}</td>
                 <td className="has-text-centered">{record.CROP_T.crop_name}</td>
-                <td>{record.USER_T.user_fullname}</td>
+                <td className="has-text-centered">{record.USER_T.user_fullname}</td>
             </tr>
         );
     };
@@ -63,17 +63,17 @@ const PrecisionFarming = () => {
             <table className="table is-bordered is-hoverable is-fullwidth mb-6">
                 <thead>
                 <tr style={{ backgroundColor: '#E1F6F0' }}>
-                    <th>No</th>
-                    <th>Crop Name</th>
-                    <th>Created By</th>
+                    <th className="has-text-centered">No</th>
+                    <th className="has-text-centered">Crop Name</th>
+                    <th className="has-text-centered">Created By</th>
                 </tr>
                 </thead>
                 <tbody>
                 {crop.map((crop, index) => (
                     <tr key={crop.crop_uuid}>
-                        <td>{index + 1}</td>
+                        <td className="has-text-centered">{index + 1}</td>
                         <td>{crop.crop_name}</td>
-                        <td>{crop.USER_T.user_fullname}</td>
+                        <td className="has-text-centered">{crop.USER_T.user_fullname}</td>
                     </tr>
                 ))}
                 </tbody>
