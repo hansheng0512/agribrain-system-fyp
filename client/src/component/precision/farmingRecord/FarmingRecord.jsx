@@ -16,8 +16,11 @@ const FarmingRecord = () => {
     }, []);
 
     const getFarming = async () => {
-        const response = await axios.get('http://localhost:5000/api/v1/farming');
-        setFarming(response.data);
+        const response = await axios.get("http://localhost:5000/api/v1/farming");
+        const sortedFarming = response.data.sort((a, b) =>
+            a.farming_date > b.farming_date ? -1 : 1
+        );
+        setFarming(sortedFarming);
     };
 
     useEffect(() => {
@@ -153,8 +156,8 @@ const FarmingRecord = () => {
                             style={{ maxWidth: '20vw' }}
                         />
                         <span className="icon is-small is-left">
-              <FaFilter className="filter-icon" />
-            </span>
+                             <FaFilter className="filter-icon" />
+                        </span>
                     </div>
                 </div>
             </div>

@@ -21,7 +21,10 @@ const PrecisionFarming = () => {
 
     const getFarming = async () => {
         const response = await axios.get("http://localhost:5000/api/v1/farming");
-        setFarming(response.data);
+        const sortedFarming = response.data.sort((a, b) =>
+            a.farming_date > b.farming_date ? -1 : 1
+        );
+        setFarming(sortedFarming);
     };
 
 
