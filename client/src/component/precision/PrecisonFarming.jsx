@@ -79,7 +79,6 @@ const PrecisionFarming = () => {
                 </tbody>
             </table>
 
-        {/*    Farming Table*/}
             {/* Farming Table */}
             <h1 className="subtitle is-underlined">Farming Listing</h1>
             <table className="table is-bordered is-hoverable is-fullwidth">
