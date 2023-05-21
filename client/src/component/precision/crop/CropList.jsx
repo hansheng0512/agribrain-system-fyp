@@ -127,7 +127,7 @@ const CropList = () => {
                 <div className="modal is-active">
                     <div className="modal-background"></div>
                     <div className="modal-card">
-                        <header className="modal-card-head">
+                        <header className="modal-card-head" style={{backgroundColor:"#71AF9D"}}>
                             <p className="modal-card-title">Confirm Deletion</p>
                             <button
                                 className="delete"
@@ -135,17 +135,17 @@ const CropList = () => {
                                 onClick={closeDeleteConfirmation}
                             ></button>
                         </header>
-                        <section className="modal-card-body">
-                            <p>Are you sure you want to delete this crop?</p>
+                        <section className="modal-card-body is-flex is-justify-content-center">
+                            <p style={{margin:"2vh"}}>Are you sure you want to delete this crop?</p>
                         </section>
-                        <footer className="modal-card-foot">
+                        <footer className="modal-card-foot ">
                             <button
-                                className="button is-danger"
+                                className="button is-danger  is-small"
                                 onClick={() => deleteCrop(deleteConfirmation)}
                             >
                                 Delete
                             </button>
-                            <button className="button" onClick={closeDeleteConfirmation}>
+                            <button className="button is-small" onClick={closeDeleteConfirmation}>
                                 Cancel
                             </button>
                         </footer>
