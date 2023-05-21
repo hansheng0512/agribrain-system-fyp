@@ -27,7 +27,7 @@ const CropList = () => {
         setFilterText(e.target.value);
     };
 
-    const filteredCrops = crop.filter((crop) => {
+    const filteredName = crop.filter((crop) => {
         return crop.USER_T.user_fullname
             .toLowerCase()
             .includes(filterText.toLowerCase());
@@ -61,7 +61,7 @@ const CropList = () => {
                     <p className="control has-icons-left">
                         <input
                             type="text"
-                            className="input is-rounded is-loading"
+                            className="input is-rounded"
                             value={filterText}
                             onChange={handleFilterChange}
                             placeholder="Enter Name"
@@ -85,12 +85,12 @@ const CropList = () => {
                     </tr>
                     </thead>
                     <tbody>
-                    {filteredCrops.length === 0 ? (
+                    {filteredName.length === 0 ? (
                         <tr>
                             <td colSpan="4">No data found.</td>
                         </tr>
                     ) : (
-                        filteredCrops.map((crop, index) => (
+                        filteredName.map((crop, index) => (
                             <tr key={crop.crop_uuid}>
                                 <td className="has-text-centered">{index + 1}</td>
                                 <td>{crop.crop_name}</td>
