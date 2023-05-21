@@ -8,6 +8,8 @@ const FarmingRecord = () => {
     const [filterText, setFilterText] = useState('');
     const [filterUser, setFilterUser] = useState('');
     const [filteredFarming, setFilteredFarming] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [recordsPerPage] = useState(5);
 
     useEffect(() => {
         getFarming();
@@ -50,6 +52,57 @@ const FarmingRecord = () => {
         }
     };
 
+    const indexOfLastRecord = currentPage * recordsPerPage;
+    const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+    const currentRecords = filteredFarming.slice(
+        indexOfFirstRecord,
+        indexOfLastRecord
+    );
+
+    const paginate = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
+    const emptyRow = (
+        <tr>
+            <td colSpan="5">No data found.</td>
+        </tr>
+    );
+
+    const renderTableRows = () => {
+        if (currentRecords.length === 0) {
+            return emptyRow;
+        } else if (currentRecords.length < recordsPerPage) {
+            const additionalRows = Array(recordsPerPage - currentRecords.length)
+                .fill()
+                .map((_, index) => (
+                    <tr key={`empty-row-${index}`}>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                ));
+            return [...currentRecords.map(renderTableRow), ...additionalRows];
+        } else {
+            return currentRecords.map(renderTableRow);
+        }
+    };
+
+    const renderTableRow = (record, index) => {
+        const rowIndex = indexOfFirstRecord + index + 1;
+        return (
+            <tr key={record.farming_uuid}>
+                <td className="has-text-centered">{rowIndex}</td>
+                <td>{record.farming_name}</td>
+                <td className="has-text-centered">{record.farming_date}</td>
+                <td className="has-text-centered">{record.CROP_T.crop_name}</td>
+                <td>{record.USER_T.user_fullname}</td>
+            </tr>
+        );
+    };
+
     return (
         <div>
             <h1 className="title">Farming Record</h1>
@@ -71,7 +124,12 @@ const FarmingRecord = () => {
                     <label className="label">Farming Name</label>
                     <div className="control">
                         <div className="select is-rounded">
-                            <select name="filterText" value={filterText} onChange={handleFilterChange} style={{ minWidth: "20vw" }}>
+                            <select
+                                name="filterText"
+                                value={filterText}
+                                onChange={handleFilterChange}
+                                style={{ minWidth: '20vw' }}
+                            >
                                 <option value="">All</option>
                                 <option value="Fertiliser">Fertiliser</option>
                                 <option value="irrigation">Irrigation</option>
@@ -92,44 +150,50 @@ const FarmingRecord = () => {
                             name="filterUser"
                             value={filterUser}
                             onChange={handleFilterChange}
-                            style={{ maxWidth: "20vw"}}
+                            style={{ maxWidth: '20vw' }}
                         />
                         <span className="icon is-small is-left">
-                            <FaFilter className="filter-icon" />
-                        </span>
+              <FaFilter className="filter-icon" />
+            </span>
                     </div>
                 </div>
             </div>
 
-
             <table className="table is-bordered is-hoverable is-fullwidth">
                 <thead>
                 <tr style={{ backgroundColor: '#E1F6F0' }}>
-                    <th className="has-text-centered" >No</th>
-                    <th className="has-text-centered" >Farming Name</th>
-                    <th className="has-text-centered" >Date</th>
-                    <th className="has-text-centered" >Crop Name</th>
-                    <th className="has-text-centered" >Created By</th>
+                    <th className="has-text-centered">No</th>
+                    <th className="has-text-centered">Farming Name</th>
+                    <th className="has-text-centered">Date</th>
+                    <th className="has-text-centered">Crop Name</th>
+                    <th className="has-text-centered">Created By</th>
                 </tr>
                 </thead>
                 <tbody>
-                {filteredFarming.length === 0 ? (
-                    <tr>
-                        <td colSpan="5">No data found.</td>
-                    </tr>
-                ) : (
-                    filteredFarming.map((record, index) => (
-                        <tr key={record.farming_uuid}>
-                            <td className="has-text-centered" >{index + 1}</td>
-                            <td>{record.farming_name}</td>
-                            <td className="has-text-centered" >{record.farming_date}</td>
-                            <td className="has-text-centered" >{record.CROP_T.crop_name}</td>
-                            <td>{record.USER_T.user_fullname}</td>
-                        </tr>
-                    ))
-                )}
+                {renderTableRows()}
                 </tbody>
             </table>
+
+            <div className="pagination" style={{ marginTop: '1rem', justifyContent: 'flex-end' }}>
+                {filteredFarming.length > recordsPerPage && (
+                    <div className="buttons">
+                        {Array.from(
+                            { length: Math.ceil(filteredFarming.length / recordsPerPage) },
+                            (_, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => paginate(index + 1)}
+                                    className={`button ${
+                                        currentPage === index + 1 ? 'is-primary' : ''
+                                    }`}
+                                >
+                                    {index + 1}
+                                </button>
+                            )
+                        )}
+                    </div>
+                )}
+            </div>
         </div>
     );
 };
