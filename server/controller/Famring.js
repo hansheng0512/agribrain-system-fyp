@@ -6,10 +6,27 @@ import User from "../model/UserModel.js";
 export const getFarming = async (req, res) => {
     try{
         let response;
-        response = await Farming.findAll(({
-            attributes:['farming_uuid','farming_name','farming_date'],
-            include:[
-                {
+        if(req.user_role === "Farmer"){
+            response = await Farming.findAll(({
+                attributes:['farming_uuid','farming_name','farming_date'],
+                include:[
+                    {
+                        model:User,
+                        attributes:['user_fullname','user_email'],
+                    },
+                    {
+                        model:Crop,
+                        attributes:['crop_name'],
+                    },
+                ]
+            }))
+        }else{
+            response = await Farming.findAll(({
+                attributes:['farming_uuid','farming_name','farming_date'],
+                where: {
+                  userId: req.userId
+                },
+                include:[{
                     model:User,
                     attributes:['user_fullname','user_email'],
                 },
@@ -17,10 +34,10 @@ export const getFarming = async (req, res) => {
                     model:Crop,
                     attributes:['crop_name'],
                 },
-            ]
-        }))
+                ]
+            }))
+        }
         res.status(200).json(response);
-
     }catch (error){
         res.status(500).json({msg:error.message});
     }
