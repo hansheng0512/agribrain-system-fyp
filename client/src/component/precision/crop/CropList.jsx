@@ -94,7 +94,7 @@ const CropList = () => {
                             <tr key={crop.crop_uuid}>
                                 <td className="has-text-centered">{index + 1}</td>
                                 <td>{crop.crop_name}</td>
-                                <td>{crop.USER_T.user_fullname}</td>
+                                <td className="has-text-centered">{crop.USER_T.user_fullname}</td>
                                 <td>
                                     <div className="has-text-centered">
                                         <Link
