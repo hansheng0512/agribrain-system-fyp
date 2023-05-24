@@ -1,7 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import weather from "../../image/weather/weather.png";
 import CameronHighlands from "../../image/weather/CameronHighlands.jpg"
-import sun  from "../../image/weather/sun.png"
 import axios from "axios";
 
 
@@ -51,57 +49,13 @@ const ClimateCondition = () => {
                 <div
                     className="column is-one-third p-6"
                     style={{
-                        background: 'white',
+                        background: 'whitesmoke',
                         borderRadius: '8px 0 0 8px',
                         borderTop:'1px solid #ccc',
                         borderLeft:'1px solid #ccc',
                         borderBottom:'1px solid #ccc',
                     }}
                 >
-                    <div
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'left',
-                            marginLeft:"2vw",
-                            marginTop:"2vh"
-                    }}>
-                        <img style={{ height: "auto", maxWidth: "80%" }} src={weather} alt="weather" />
-                    </div>
-                    <div style={{ textAlign: 'right', marginRight:"2vw"}}>
-                        {weatherData && weatherData.current && (
-                            <h1 style={{fontSize:"60px",fontWeight:"bold"}}>
-                                {weatherData.current.temp_c}°C
-                            </h1>
-                        )}
-
-                        <h1 style={{fontSize:"20px"}} >
-                            {currentDate}
-                        </h1>
-
-                    </div>
-
-                    <hr style={{ borderTop: '1px solid #ccc', margin: '1rem 0' }} />
-
-                    <div style={{ textAlign: 'left', marginRight:"2vw"}}>
-
-                        {weatherData && weatherData.current && (
-                            <h1 className="text is-bold" style={{fontSize:"20px"}} >
-                                {weatherData.current.condition.text}
-                            </h1>
-                        )}
-
-                        {weatherData && weatherData.current && (
-                            <h1 className="text" style={{fontSize:"15px"}} >
-                                Cloud Cover {weatherData.current.cloud}%
-                            </h1>
-                        )}
-
-
-                    </div>
-
-                    <br/>
-
                     <div style={{ position: 'relative' }}>
                         <img
                             style={{borderRadius: '15px' }}
@@ -126,6 +80,59 @@ const ClimateCondition = () => {
                             </div>
                         )}
                     </div>
+
+                    <div
+                        style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'left',
+                            marginLeft:"2vw",
+                            marginTop:"2vh"
+                    }}>
+                        {weatherData && weatherData.current && (
+                            <img
+                                style={{ height: '100px', width: '100px' , marginTop:"5vh"}}
+                                src={weatherData.current.condition.icon}
+                                alt="weather-icon"
+                            />
+                        )}
+                    </div>
+
+                    <div style={{textAlign: 'right', marginRight:"2vw"}}>
+                        {weatherData && weatherData.current && (
+                            <h1 style={{fontSize:"60px",fontWeight:"bold"}}>
+                                {weatherData.current.temp_c}°C
+                            </h1>
+                        )}
+                    </div>
+                    <div>
+                        <h1 style={{fontSize:"20px"}} >
+                            {currentDate}
+                        </h1>
+                    </div>
+
+                    <hr style={{ borderTop: '1px solid #ccc', margin: '1rem 0' }} />
+
+                    <div style={{ textAlign: 'left', marginRight:"2vw"}}>
+
+                        {weatherData && weatherData.current && (
+                            <h1 className="text is-bold" style={{fontSize:"20px"}} >
+                                {weatherData.current.condition.text}
+                            </h1>
+                        )}
+
+                        {weatherData && weatherData.current && (
+                            <h1 className="text" style={{fontSize:"15px"}} >
+                                Cloud Cover {weatherData.current.cloud}%
+                            </h1>
+                        )}
+
+
+                    </div>
+
+                    <br/>
+
+
                 </div>
                 <div
                     className="column pt-5"
@@ -137,79 +144,100 @@ const ClimateCondition = () => {
                         borderBottom:'1px solid #ccc',
                     }}
                 >
-                    <h1>Week</h1>
+                    <h1 style={{fontSize:"20px",fontWeight:"bold"}}>Air Quality</h1>
                     <div className="columns p-3">
-                        <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
-                            <p>Monday</p>
-                            <img style={{ marginTop:"2vh",height: "auto", maxWidth: "4vw" }} src={sun} alt="sun" />
-                            <p>26 °C</p>
-                        </div>
-                        <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
-                            <p>Tuesday</p>
-                            <img style={{ marginTop:"2vh",height: "auto", maxWidth: "4vw" }} src={sun} alt="sun" />
-                            <p>26 °C</p>
-                        </div>
-                        <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
-                            <p>Wednesday</p>
-                            <img style={{ marginTop:"2vh",height: "auto", maxWidth: "4vw" }} src={sun} alt="sun" />
-                            <p>26 °C</p>
-                        </div>
-                        <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
-                            <p>Thursday</p>
-                            <img style={{ marginTop:"2vh",height: "auto", maxWidth: "4vw" }} src={sun} alt="sun" />
-                            <p>26 °C</p>
-                        </div>
-                        <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center',margin: '0.3rem' }}>
-                            <p>Friday</p>
-                            <img style={{ marginTop:"2vh",height: "auto", maxWidth: "4vw" }} src={sun} alt="sun" />
-                            <p>26 °C</p>
-                        </div>
-                        <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
-                            <p>Saturday</p>
-                            <img style={{ marginTop:"2vh",height: "auto", maxWidth: "4vw" }} src={sun} alt="sun" />
-                            <p>26 °C</p>
-                        </div>
-                        <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
-                            <p>Sunday</p>
-                            <img style={{ marginTop:"2vh",height: "auto", maxWidth: "4vw" }} src={sun} alt="sun" />
-                            <p>26 °C</p>
-                        </div>
+                        {weatherData && weatherData.current && (
+                            <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
+                                <p className="is-underlined">Carbon Monoxide</p>
+                                <p>{weatherData.current.air_quality.co.toFixed(2)} μg/m3</p>
+                            </div>
+                        )}
+
+                        {weatherData && weatherData.current && (
+                            <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
+                                <p className="is-underlined">Ozone</p>
+                                <p>{weatherData.current.air_quality.o3.toFixed(2)} μg/m3</p>
+                            </div>
+                        )}
+
+                        {weatherData && weatherData.current && (
+                            <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
+                                <p className="is-underlined">Nitrogen dioxide</p>
+                                <p>{weatherData.current.air_quality.no2.toFixed(2)} μg/m3</p>
+                            </div>
+                        )}
+
+                        {weatherData && weatherData.current && (
+                            <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
+                                <p className="is-underlined">Sulphur dioxide</p>
+                                <p>{weatherData.current.air_quality.so2.toFixed(2)} μg/m3</p>
+                            </div>
+                        )}
                     </div>
 
-                    <h1>Today Highlights</h1>
+                    <h1 style={{fontSize:"20px",fontWeight:"bold"}}>Today Highlights</h1>
                     <div className="columns p-3">
-                        <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
-                            <p>UV Index</p>
-                            <img style={{ marginTop:"2vh",height: "auto", maxWidth: "4vw" }} src={sun} alt="sun" />
-                            <p>123</p>
-                        </div>
-                        <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
-                            <p>Wind Status</p>
-                            <img style={{ marginTop:"2vh",height: "auto", maxWidth: "4vw" }} src={sun} alt="sun" />
-                            <p>26 °C</p>
-                        </div>
-                        <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
-                            <p>Sunrise & Sunset</p>
-                            <img style={{ marginTop:"2vh",height: "auto", maxWidth: "4vw" }} src={sun} alt="sun" />
-                            <p>26 °C</p>
-                        </div>
+                        {weatherData && weatherData.current && (
+                            <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
+                                <p>UV Index</p>
+                                <p>{weatherData.current.uv}</p>
+                            </div>
+                        )}
+                        {weatherData && weatherData.current && (
+                            <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
+                                <p>Wind Status</p>
+                                <p>{weatherData.current.wind_mph} Miles Per Hour</p>
+                                <p>{weatherData.current.wind_degree}</p>
+                                <p>{weatherData.current.wind_dir}</p>
+                            </div>
+                        )}
+                        {weatherData && weatherData.current && (
+                            <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
+                                <p>Pressure</p>
+                                <p>{weatherData.current.pressure_mb} millibars</p>
+                            </div>
+                        )}
                     </div>
                     <div className="columns p-3">
-                        <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
-                            <p>Humidity</p>
-                            <img style={{ marginTop:"2vh",height: "auto", maxWidth: "4vw" }} src={sun} alt="sun" />
-                            <p>26 °C</p>
-                        </div>
-                        <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
-                            <p>Visibility</p>
-                            <img style={{ marginTop:"2vh",height: "auto", maxWidth: "4vw" }} src={sun} alt="sun" />
-                            <p>26 °C</p>
-                        </div>
-                        <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
-                            <p>Air Quality</p>
-                            <img style={{ marginTop:"2vh",height: "auto", maxWidth: "4vw" }} src={sun} alt="sun" />
-                            <p>26 °C</p>
-                        </div>
+                        {weatherData && weatherData.current && (
+                            <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
+                                <p>Humidity</p>
+                                <p>{weatherData.current.humidity}</p>
+                            </div>
+                        )}
+                        {weatherData && weatherData.current && (
+                            <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
+                                <p>Wind Gust</p>
+                                <p>{weatherData.current.gust_mph} Miles Per Hour</p>
+                            </div>
+                        )}
+                        {weatherData && weatherData.current && (
+                            <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
+                                <p>Air Quality</p>
+                                <p>{weatherData.current.air_quality['us-epa-index']}</p>
+                                <p>
+                                    {(() => {
+                                        switch (weatherData.current.air_quality['us-epa-index']) {
+                                            case 1:
+                                                return 'Good';
+                                            case 2:
+                                                return 'Moderate';
+                                            case 3:
+                                                return 'Unhealthy for sensitive group';
+                                            case 4:
+                                                return 'Unhealthy';
+                                            case 5:
+                                                return 'Very Unhealthy';
+                                            case 6:
+                                                return 'Hazardous';
+                                            default:
+                                                return '';
+                                        }
+                                    })()}
+                                </p>
+                            </div>
+                        )}
+
                     </div>
                 </div>
             </div>
