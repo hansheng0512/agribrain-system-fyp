@@ -10,7 +10,7 @@ import CropRoute from "./route/CropRoute.js";
 import AuthRoute from "./route/AuthRoute.js";
 import CropManagementRoute from "./route/CropManagementRoute.js";
 import SensorRoute from "./route/SensorRoute.js";
-
+import WeatherRoute from "./route/WeatherRoute.js";
 
 dotenv.config();
 
@@ -49,10 +49,9 @@ app.use(AuthRoute);
 app.use(FarmingRoute);
 app.use(CropManagementRoute);
 app.use(SensorRoute);
-
+app.use(WeatherRoute);
 
 // store.sync();
-
 
 
 
