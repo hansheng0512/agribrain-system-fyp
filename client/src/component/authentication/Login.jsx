@@ -48,7 +48,7 @@ const Login = () => {
                             color: "white",
                             height: "15vh",
                             fontSize: "50px",
-                            fontWeight: "900",
+                            fontWeight: "900"
                         }}
                     >
                         AgriBrain
@@ -73,7 +73,7 @@ const Login = () => {
                                                     style={{
                                                         color: "white",
                                                         textAlign: "center",
-                                                        fontWeight: "bold",
+                                                        fontWeight: "bold"
                                                     }}
                                                 >
                                                     Error
@@ -101,7 +101,7 @@ const Login = () => {
                                                     style={{
                                                         backgroundColor: "#71AF9D",
                                                         color: "white",
-                                                        alignContent: "right",
+                                                        alignContent: "right"
                                                     }}
                                                 >
                                                     OK
@@ -160,14 +160,14 @@ const Login = () => {
                                 showArrows={false}
                                 showThumbs={false}
                             >
-                                <div>
-                                    <img src={picture1} alt="Advertisement 1" />
+                                <div style={{ height: "400px" }}>
+                                    <img src={picture1} alt="Advertisement 1" style={{ height: "100%" }} />
                                 </div>
-                                <div>
-                                    <img src={picture2} alt="Advertisement 2" />
+                                <div style={{ height: "400px" }}>
+                                    <img src={picture2} alt="Advertisement 2" style={{ height: "100%" }} />
                                 </div>
-                                <div>
-                                    <img src={picture3} alt="Advertisement 3" />
+                                <div style={{ height: "400px" }}>
+                                    <img src={picture3} alt="Advertisement 3" style={{ height: "100%" }} />
                                 </div>
                             </Carousel>
                         </div>
