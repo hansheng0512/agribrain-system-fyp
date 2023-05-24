@@ -1,9 +1,50 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import weather from "../../image/weather/weather.png";
 import CameronHighlands from "../../image/weather/CameronHighlands.jpg"
 import sun  from "../../image/weather/sun.png"
+import axios from "axios";
+
+
 
 const ClimateCondition = () => {
+
+    const [weatherData, setWeatherData] = useState();
+    const [currentDate, setCurrentDate] = useState('');
+
+    const getWeatherData = () => {
+        axios
+            .get(
+                "http://localhost:5000/api/v1/currentWeather"
+            )
+            .then((response) => {
+                setWeatherData(response.data);
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+                // You can add additional error handling here, such as setting a default weather data value
+            });
+    };
+
+
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            const date = new Date();
+            const formattedDate = date.toLocaleString();
+            setCurrentDate(formattedDate);
+        }, 1000);
+
+        return () => {
+            clearInterval(intervalId);
+        };
+    }, []);
+
+
+    useEffect(() => {
+        getWeatherData();
+    }, []);
+
     return (
         <div className="box is-shadowless" style={{ padding: 0, margin: 0 }}>
             <div className="columns p-3">
@@ -17,28 +58,46 @@ const ClimateCondition = () => {
                         borderBottom:'1px solid #ccc',
                     }}
                 >
-                    {/*<h1 className="title mt-3">Cameron Highlands</h1>*/}
-                    {/*<h2 className="subtitle mt-1"> 21/05/2023 , 16:00</h2>*/}
-
                     <div
                         style={{
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'left',
-                            marginLeft:"2vw"
+                            marginLeft:"2vw",
+                            marginTop:"2vh"
                     }}>
                         <img style={{ height: "auto", maxWidth: "80%" }} src={weather} alt="weather" />
                     </div>
                     <div style={{ textAlign: 'right', marginRight:"2vw"}}>
-                        <h1 style={{fontSize:"60px",fontWeight:"bold"}}>28 °C</h1>
-                        <h1 style={{fontSize:"30px"}} >Sun, 21/05/2023</h1>
+                        {weatherData && weatherData.current && (
+                            <h1 style={{fontSize:"60px",fontWeight:"bold"}}>
+                                {weatherData.current.temp_c}°C
+                            </h1>
+                        )}
+
+                        <h1 style={{fontSize:"20px"}} >
+                            {currentDate}
+                        </h1>
+
                     </div>
 
                     <hr style={{ borderTop: '1px solid #ccc', margin: '1rem 0' }} />
 
                     <div style={{ textAlign: 'left', marginRight:"2vw"}}>
-                        <h1 className="text" >Mostly Cloudy</h1>
-                        <h1 className="text" >Rain 30%</h1>
+
+                        {weatherData && weatherData.current && (
+                            <h1 className="text is-bold" style={{fontSize:"20px"}} >
+                                {weatherData.current.condition.text}
+                            </h1>
+                        )}
+
+                        {weatherData && weatherData.current && (
+                            <h1 className="text" style={{fontSize:"15px"}} >
+                                Cloud Cover {weatherData.current.cloud}%
+                            </h1>
+                        )}
+
+
                     </div>
 
                     <br/>
@@ -49,21 +108,23 @@ const ClimateCondition = () => {
                             src={CameronHighlands}
                             alt="CameronHighlands"
                         />
-                        <div
-                            style={{
-                                position: 'absolute',
-                                top: '50%',
-                                left: '50%',
-                                transform: 'translate(-50%, -50%)',
-                                textAlign: 'center',
-                                color: 'white',
-                                fontSize: '1.5rem',
-                                fontWeight: 'bold',
-                                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-                            }}
-                        >
-                            Cameron Highlands, MY
-                        </div>
+                        {weatherData && weatherData.location && (
+                            <div
+                                style={{
+                                    position: 'absolute',
+                                    top: '50%',
+                                    left: '50%',
+                                    transform: 'translate(-50%, -50%)',
+                                    textAlign: 'center',
+                                    color: 'white',
+                                    fontSize: '1.5rem',
+                                    fontWeight: 'bold',
+                                    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+                                }}
+                            >
+                                {weatherData.location.name}, {weatherData.location.region}
+                            </div>
+                        )}
                     </div>
                 </div>
                 <div
@@ -120,7 +181,7 @@ const ClimateCondition = () => {
                         <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
                             <p>UV Index</p>
                             <img style={{ marginTop:"2vh",height: "auto", maxWidth: "4vw" }} src={sun} alt="sun" />
-                            <p>26 °C</p>
+                            <p>123</p>
                         </div>
                         <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
                             <p>Wind Status</p>
