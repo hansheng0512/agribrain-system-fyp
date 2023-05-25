@@ -10,3 +10,16 @@ export const getCurrentWeather = async (req, res) => {
         res.status(500).json({ error: 'An error occurred' });
     }
 }
+
+export const getForecastWeather = async (req, res) => {
+    try {
+        const response = await fetch('http://api.weatherapi.com/v1/forecast.json?key=ed6616bf3b1d4d57b7a114539232405&q=Cameron%20Highlands&days=7&aqi=yes&alerts=yes', {
+            credentials: 'include',
+        });
+        const data = await response.json();
+        res.json(data);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'An error occurred' });
+    }
+}
