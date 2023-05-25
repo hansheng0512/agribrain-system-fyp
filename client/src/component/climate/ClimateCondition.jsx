@@ -31,8 +31,9 @@ const ClimateCondition = () => {
                 "http://localhost:5000/api/v1/forecastWeather"
             )
             .then((response) => {
-                setWeatherData(response.data);
-                console.log(response);
+                setForecastWeatherData(response.data);
+                console.log(setForecastWeatherData);
+                console.log(response.data.forecast.forecastday[0].astro.sunrise);
             })
             .catch((error) => {
                 console.log(error);
@@ -221,10 +222,11 @@ const ClimateCondition = () => {
                                 <p>{weatherData.current.humidity}</p>
                             </div>
                         )}
-                        {weatherData && weatherData.current && (
+                        {forecastWeatherData && forecastWeatherData.forecast && (
                             <div className="column" style={{ background: 'white', borderRadius: '8px', height: '20vh', textAlign: 'center', margin: '0.3rem' }}>
-                                <p>Wind Gust</p>
-                                <p>{weatherData.current.gust_mph} Miles Per Hour</p>
+                                <p>Sunrise and Sunset</p>
+                                <p>Sunrise:{forecastWeatherData.forecast.forecastday[0].astro.sunrise}</p>
+                                <p>Senset:{forecastWeatherData.forecast.forecastday[0].astro.sunset}</p>
                             </div>
                         )}
                         {weatherData && weatherData.current && (
