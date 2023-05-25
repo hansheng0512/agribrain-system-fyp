@@ -6,6 +6,7 @@ import axios from "axios";
 
 const ClimateCondition = () => {
 
+
     const [weatherData, setWeatherData] = useState();
     const [currentDate, setCurrentDate] = useState('');
 
