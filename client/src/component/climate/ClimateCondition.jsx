@@ -8,6 +8,7 @@ const ClimateCondition = () => {
 
 
     const [weatherData, setWeatherData] = useState();
+    const [forecastWeatherData, setForecastWeatherData] = useState();
     const [currentDate, setCurrentDate] = useState('');
 
     const getWeatherData = () => {
@@ -17,14 +18,27 @@ const ClimateCondition = () => {
             )
             .then((response) => {
                 setWeatherData(response.data);
-                console.log(response);
             })
             .catch((error) => {
-                console.log(error);            
+                console.log(error);
                 // You can add additional error handling here, such as setting a default weather data value
             });
     };
 
+    const getForecastWeather = () => {
+        axios
+            .get(
+                "http://localhost:5000/api/v1/forecastWeather"
+            )
+            .then((response) => {
+                setWeatherData(response.data);
+                console.log(response);
+            })
+            .catch((error) => {
+                console.log(error);
+                // You can add additional error handling here, such as setting a default weather data value
+            });
+    }
 
 
     useEffect(() => {
@@ -42,6 +56,7 @@ const ClimateCondition = () => {
 
     useEffect(() => {
         getWeatherData();
+        getForecastWeather();
     }, []);
 
     return (
