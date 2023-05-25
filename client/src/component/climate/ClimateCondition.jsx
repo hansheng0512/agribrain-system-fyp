@@ -19,11 +19,10 @@ import WindSpeed from "../../image/weather/WindSpeed.png"
 import AirQuality from "../../image/weather/AirQuality.png"
 
 const ClimateCondition = () => {
-
-
     const [weatherData, setWeatherData] = useState();
     const [forecastWeatherData, setForecastWeatherData] = useState();
     const [currentDate, setCurrentDate] = useState('');
+    const [isLoading, setIsLoading] = useState(true); // Loading state variable
 
     const getWeatherData = () => {
         axios
@@ -55,7 +54,6 @@ const ClimateCondition = () => {
             });
     }
 
-
     useEffect(() => {
         const intervalId = setInterval(() => {
             const date = new Date();
@@ -68,12 +66,17 @@ const ClimateCondition = () => {
         };
     }, []);
 
-
     useEffect(() => {
+        // Set loading to true when making API requests
+        setIsLoading(true);
+
+        // Call the API functions
         getWeatherData();
         getForecastWeather();
-    }, []);
 
+        // Set loading to false after API requests are complete
+        setIsLoading(false);
+    }, []);
 
     function getUVIndexColor(uvIndex) {
         if (uvIndex < 3) {
@@ -87,6 +90,10 @@ const ClimateCondition = () => {
         }
     }
 
+    // Render loading state while data is being fetched
+    if (isLoading) {
+        return <p>Loading...</p>;
+    }
 
     return (
         <div className="box is-shadowless" style={{ padding: 0, margin: 0 }}>
