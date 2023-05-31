@@ -134,7 +134,7 @@ const FarmingRecord = () => {
                                 style={{ minWidth: '20vw' }}
                             >
                                 <option value="">All</option>
-                                <option value="Fertiliser">Fertiliser</option>
+                                <option value="fertiliser">Fertiliser</option>
                                 <option value="irrigation">Irrigation</option>
                                 <option value="sowing seeds">Sowing Seeds</option>
                                 <option value="harvest">Harvest</option>
