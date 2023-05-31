@@ -41,6 +41,9 @@ const Sidebar = () => {
         dispatch(reset());
         navigate("/");
     }
+
+
+
     return (
         <div>
             <aside className="menu pl-2 custom-sidebar">
