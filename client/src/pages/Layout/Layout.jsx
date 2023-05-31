@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
                         <nav className="breadcrumb ml-0" aria-label="breadcrumbs">
                             <div className="columns" style={{width:"97vw"}}>
                                 <div className="column">
-                                    <ul className="is-active" style={{ marginTop: "3vh", marginLeft: "3vh" }}>
+                                    <ul className="is-active" style={{ marginTop: "3vh", marginLeft: "3vh", fontWeight:"bold" }}>
                                         <li>
                                             <a style={{ pointerEvents: "none", color: "inherit" }}>Agribrain</a>
                                         </li>
